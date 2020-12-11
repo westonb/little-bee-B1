@@ -1,0 +1,127 @@
+* AD8129  SPICE Macro-model                 
+* Description: Amplifier
+* Generic Desc:
+* Developed by: CK TRW/ADI
+* Revision History:
+*   1.1 (1/2013) Updated to new header style
+*   1.0 (07/2010)
+* Copyright 2006 by Analog Devices, Inc.
+*
+* Refer to 
+* http://www.analog.com/Analog_Root/static/techSupport/designTools/
+* spiceModels/license/spice_general.html for License Statement.  
+* Use of this model indicates your acceptance with the terms and 
+* provisions in the License Statement.
+*
+* BEGIN Notes:
+* 
+* Not Modeled:
+*    Distortion
+*    Noise
+*
+* Parameters modeled include:
+*    Bandwidth
+*    Slew Rate
+*    Input Bias Current
+*    Offset Voltage
+*  
+* END Notes   
+*  
+* Node assignments
+*                IN+ input
+*                | IN- input
+*                | | REF input
+*                | | | FB input
+*                | | | | V+
+*                | | | | |  V-
+*                | | | | |  |  out
+*                | | | | |  |  |
+.SUBCKT AD8129   1 2 3 4 99 50 45
+*
+* INPUT STAGE
+*
+Q1   17  1   9   QX
+Q2   18  11  10  QX
+R1   9   12  1100
+R2   10  12  1100
+I1   12  50   2E-3
+Dcm1 95 12 dx
+Vcm1 95 50 2.2
+Dcm2 94 16 dx
+Vcm2 94 50 2.2
+		 
+EOS1 2   11  POLY(1) (31,98)  1.5E-3  1
+IOS1 1   2   0.08u
+C1   1   2   3E-12
+RD1  1   2   6E6
+*
+* REF/FB INPUT STAGE
+*
+Q3   17  3   14  QY
+Q4   18  13  15  QY
+R3   14  16  1100
+R4   15  16  1100
+I2   16  50   2E-3
+VOS2 4   13  1.5E-3
+IOS2 3   4   0.08u
+C2   3   4   2E-12
+RD2  3   4   1.93E6
+*
+VC1  32  17  DC  0.5
+VC2  33  18  DC  0.5
+D7   99   32  DX
+D8   99   33  DX
+*
+*
+* TRANSCONDUCTANCE STAGE & DOMINANT POLE AT ?? KHZ
+*
+R7   19  98  6E6
+C3   19  98  .12E-12
+F1   98  19  POLY(2)  VC1  VC2  0   1   -1
+V2   99  20  1.7
+V3   21  50  1.7
+D1   19  20  DX
+D2   21  19  DX
+*
+* POLE AT ?? MHZ
+*
+R6   23  98   100k
+C4   23  98   4f
+G2   98  23   19  98  1e-5
+*
+* COMMON-MODE GAIN NETWORK WITH ZERO AT 100 KHZ
+*
+R10  30  31   1E6
+R11  31  98   1
+C7   30  31   3.18E-12
+E3   98  30   POLY(2)  (1,98) (2,98)  0  5  5
+*
+* OUTPUT STAGE
+*
+
+Eref 98 0 poly(2) 50 0 99 0 0 0.5 0.5
+FSY  99   50   POLY(2) V7 V8 10E-3 1 1
+R15  29  99   12
+R16  29  50   12
+
+L1   29  45   6E-10
+G7   29  99   99  23  83.3e-3
+G8   50  29   23  50  83.3e-3
+V4   25 29   -.332
+V5   29 26   -.3
+D3   23 25  DX
+D4   26 23 DX
+G5   98 70   29 23 2.94E-2
+D5   70 71   DX
+D6   72 70   DX
+V7   71 98   DC 0
+V8   98 72   DC 0
+*
+* MODELS USED
+*
+.MODEL QX NPN(BF=3000)
+.MODEL QY NPN(BF=1500)
+.MODEL DX   D(IS=1E-15)
+.ENDS
+*$
+;$SpiceType=AMBIGUOUS
