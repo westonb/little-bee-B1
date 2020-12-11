@@ -6,10 +6,10 @@
 #zipped gerbers
 pcb/gerbers/*.zip
 #ignore ltspice log files
-simulation/*.log
-simulation/*.plt
-simulation/*.raw
-simulation/*.net
+sim/*.log
+sim/*.plt
+sim/*.raw
+sim/*.net
 
 modeling/*.log
 modeling/*.plt
