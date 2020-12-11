@@ -1,0 +1,26 @@
+#ignore kicad backup files
+*.bak
+*.sch-bak
+*.log
+*.kicad_pcb-bak
+#zipped gerbers
+pcb/gerbers/*.zip
+#ignore ltspice log files
+simulation/*.log
+simulation/*.plt
+simulation/*.raw
+simulation/*.net
+
+modeling/*.log
+modeling/*.plt
+modeling/*.raw
+modeling/*.net
+#femm files
+modeling/*.edge
+modeling/*.ans
+
+#osx files
+*.DS_Store
+
+
+firmware/B1-firmware.X/dist/
