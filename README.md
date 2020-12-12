@@ -25,7 +25,7 @@ The location of the wire within the current sensing attachment has some impact o
 
 For higher resolution when measuring low currents, multiple turns of the wire can be made through the aperture of the current sensing attachment. The final sensitivity will be the set sensitivity times the number of turns. 
 
-Tapping the Mode Select button" will cycle through the bandwidth and gain options, which are indicated by the LED color:
+Tapping the "Mode Select" button will cycle through the bandwidth and gain options, which are indicated by the LED color:
 
 | LED Color | Mode                    |
 |-----------|-------------------------|
