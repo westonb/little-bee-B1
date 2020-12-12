@@ -7,19 +7,42 @@ The probe is capable of sensing DC currents and has a high frequency -3dB bandwi
 All project source files are in this repository and the project currently has a CrowdSupply [campaign](https://www.crowdsupply.com/weston-braun/little-bee)
 <img src="doc/images/little_bee_v4_attachment.jpg" width="400"/> <img src="doc/images/little_bee_v4_circuit.jpg" width="400"/>
 
+### Typical Electrical Performance 
+
+#### Current sensing 
+
+- **Bandwidth**: DC - 10 MHz 
+- **Sensitivity**: 0.25 Volts/Amp
+- **Max Current**: +/- 5 A
+- **Noise**
+    - 3 mA RMS at 10 MHz bandwidth
+    - 2 mA RMS at 1 MHz bandwidth 
+- **DC Accuracy**: +/- 15%
+- **Insertion Impedance**: 100 nH in parallel with 70 Ohms
+
+#### Magnetic Field Sensing 
+
+- **Bandwidth**: DC - 10 MHz
+- **Sensitivity**: 0.2 Volts/Gauss 
+- **Max Field**: +/- 6 Gauss
+- **Noise**
+    - 4mG RMS at 10 MHz bandwidth
+    - 2.5mG RMS at 1 MHz bandwidth
+
 ## Operation
-Connect the Little Bee to any oscilloscope with a SMA-BNC cable. When the probe is powered on it automatically zeros and starts in the high bandwidth and low gain mode. Tapping the Mode Select button" will cycle through the bandwidth and gain options, which are indicated by the LED color. 
+Connect the Little Bee to any oscilloscope with a SMA-BNC cable. When the probe is powered on it automatically zeros and starts in the high bandwidth and low gain mode. Tapping the "Mode Select" button will cycle through the bandwidth and gain options, which are indicated by the LED color. 
 
 The probe should be re-zeroed after switching modes. This is accomplished by pressing and holding the "zero/reset" button for at least one second before releasing. The LED will blink once when the button is first pressed and a second time when the zeroing operation is done. 
 
-When the sensor is exposed to an excessive magnetic field, or excessive current when the flux concentrator is used, the sensor will be demagnetized and need to be reset for normal operation. For on axis fields the probe can detect this and will turn the indicator light red.
+When the sensor is exposed to an excessive magnetic field, or excessive current when the current sensing attachment is used, the sensor will be demagnetized and need to be reset for normal operation. For on axis fields the probe can detect this and will turn the indicator light red.
 Off axis fields, which can occur when the probe is used for magnetic field sensing, can exceed the sensor limit without being detected. This will result a loss of sensitivity and noticeable distortion in the sensed waveforms.  
 The sensor can be reset and normal operation restored without impacting the zeroing of the probe by tapping the "zero/reset" button, which will briefly flash the indicator light.
 
 If the probe senses a low battery that will inhibit normal operation the indicator light will flash red. An alkaline AA battery should provide around 4 hours of battery life. 
 
 ### Current Sensing
-Current sensing is achieved with the current sensing attachment, which clips on to the tip of the probe. A wire can be threaded through the current sensing attachment or the current sensing attachment can be slipped over a wire before being clipped on. With the logo and writing on the Little Bee facing the user, a wire carrying current away from the user will be read as a positive current. 
+Current sensing is achieved with the current sensing attachment, which clips on to the tip of the probe. The current sensing attachment uses a ferrite core to translate the current flowing in to a wire into a known magnetic field strength. 
+A wire can be threaded through the current sensing attachment or the current sensing attachment can be slipped over a wire before being clipped on. With the logo and writing on the Little Bee facing the user, a wire carrying current away from the user will be read as a positive current. 
 
 The location of the wire within the current sensing attachment has some impact on the sensitivity of the probe due to the magnetic field in generates. It is recommended to keep the wire on the opposite side of the sensing tip within the aperture of the current sensing attachment.
 
@@ -46,10 +69,10 @@ The gain of the probe is calibrated based on measurements with the current sensi
 
 | LED Color | Mode                           |
 |-----------|--------------------------------|
-| Green     | 10MHz bandwidth 0.198 V/Gauss  |
-| Yellow    | 1MHz bandwidth 0.198 V/Gauss   |
-| Blue      | 10MHz bandwidth 0.758 V/Gauss  |
-| Teal      | 1MHz Bandwidth 0.758 V/Gauss   |
+| Green     | 10MHz bandwidth 0.2 V/Gauss  |
+| Yellow    | 1MHz bandwidth 0.2 V/Gauss   |
+| Blue      | 10MHz bandwidth 0.8 V/Gauss  |
+| Teal      | 1MHz Bandwidth 0.8 V/Gauss   |
 
 
 
