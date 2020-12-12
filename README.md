@@ -1,6 +1,6 @@
 # Little Bee B1 - A high performance current & magnetic field probe
 The Little Bee B1 is an open source magnetic field and current probe based on an Anisotropic Magneto-Resistive (AMR) magnetic sensor. 
-It directly senses magnetic fields and measures current with a current sensing attachment consisting of a gapped ferrite toroid that is placed around a wire and acts as a flux concentrator, establishing a fixed relation between the current in the wire and magnetic field the sensor is subject to. 
+It directly senses magnetic fields and measures current with a current sensing attachment consisting of a gapped ferrite toroid that is placed around a wire, establishing a fixed relation between the current in the wire and magnetic field the sensor is subject to. 
 
 The probe is capable of sensing DC currents and has a high frequency -3dB bandwidth in excess of 10Mhz. Typical specifications for current sensing are a +/- 5A range, and a 3mA RMS noise floor. For magnetic field sensing the probe has a +/- 6 gauss range. It is compatible with any 1M ohm input oscilloscope and is powered by a single AA battery. The probe uses a PIC microcontroller to automatically zero the sensor and to provide adjustable gain and bandwidth. 
 
@@ -23,7 +23,7 @@ Current sensing is achieved with the current sensing attachment, which clips on 
 
 The location of the wire within the current sensing attachment has some impact on the sensitivity of the probe due to the magnetic field in generates. It is recommended to keep the wire on the opposite side of the sensing tip within the aperture of the current sensing attachment.
 
-For higher resolution when measuring low currents multiple turns of the wire can be made through the aperture of the current sensing attachment. The final sensitivity will be the set sensitivity times the number of turns. 
+For higher resolution when measuring low currents, multiple turns of the wire can be made through the aperture of the current sensing attachment. The final sensitivity will be the set sensitivity times the number of turns. 
 
 Tapping the Mode Select button" will cycle through the bandwidth and gain options, which are indicated by the LED color:
 
