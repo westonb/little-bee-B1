@@ -1,0 +1,3 @@
+(sym_lib_table
+  (lib (name current-sense-rescue)(type Legacy)(uri ${KIPRJMOD}/current-sense-rescue.lib)(options "")(descr ""))
+)
