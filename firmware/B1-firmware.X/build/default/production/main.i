@@ -19660,7 +19660,7 @@ void OSCILLATOR_Initialize(void);
 # 107 "./mcc_generated_files/mcc.h"
 void WDT_Initialize(void);
 # 44 "main.c" 2
-# 65 "main.c"
+# 67 "main.c"
 uint8_t mux_state = 0;
 uint8_t led_color_state = 0x0;
 
@@ -19693,29 +19693,24 @@ void SW2_ISR(void){
             led_color_state = 0x2;
             LATAbits.LATA7 = 1;
             LATBbits.LATB4 = 1;
-
-
         break;
 
         case 1:
             led_color_state = (0x4 | 0x2);
             LATAbits.LATA7 = 0;
             LATBbits.LATB4 = 1;
-
         break;
 
         case 2:
             led_color_state = 0x1;
             LATAbits.LATA7 = 1;
             LATBbits.LATB4 = 0;
-
         break;
 
         case 3:
             led_color_state = (0x1 | 0x2);
             LATAbits.LATA7 = 0;
             LATBbits.LATB4 = 0;
-
         break;
     }
     set_led(led_color_state);
@@ -19793,8 +19788,14 @@ void zero_stage_2(void){
     uint16_t best_dac_val = 0;
     uint16_t stage_val;
     uint16_t best_val = 2000;
+    uint16_t old_gain = LATBbits.LATB4;
+
+
+    LATBbits.LATB4 = 0;
+    _delay((unsigned long)((20)*(8000000/4000.0)));
 
     gnd_ref_val = average_adc_reading(GNDREF_SENSE);
+
 
     for(uint16_t i = 0; i<1024; i++){
 
@@ -19810,8 +19811,7 @@ void zero_stage_2(void){
     }
 
     DAC5_Load10bitInputData(best_dac_val);
-
-
+    LATBbits.LATB4 = old_gain;
 }
 
 void init_sensor(void){
@@ -19847,7 +19847,7 @@ void main(void)
 {
 
     SYSTEM_Initialize();
-# 267 "main.c"
+
     DAC7_SetOutput(16);
     DAC3_SetOutput(24);
     DAC4_SetOutput(8);
@@ -19855,7 +19855,7 @@ void main(void)
     led_color_state = 0x2;
     mux_state = 0;
     SW2_ISR();
-
+    _delay((unsigned long)((100)*(8000000/4000.0)));
     reset_sensor();
     init_sensor();
 
@@ -19871,13 +19871,11 @@ void main(void)
 
     while (1)
     {
-
         _delay((unsigned long)((100)*(8000000/4000.0)));
-        if((average_adc_reading(VIN_SENSE)>>3) < 173){
+        if((average_adc_reading(channel_FVRBuffer1)>>3) > 460){
             (INTCONbits.GIE = 0);
             (INTCONbits.PEIE = 0);
             low_battery_loop();
         }
-
     }
 }

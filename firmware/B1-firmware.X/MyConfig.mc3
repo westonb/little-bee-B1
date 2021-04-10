@@ -29,16 +29,16 @@
          <string>class com.microchip.mcc.mcu8.modules.dac.DAC</string>
       </entry>
       <entry>
-         <string>System Module</string>
-         <string>class com.microchip.mcc.mcu8.systemManager.SystemManager</string>
-      </entry>
-      <entry>
          <string>CMP5</string>
          <string>class com.microchip.mcc.mcu8.modules.cmp.CMP</string>
       </entry>
       <entry>
          <string>DAC5</string>
          <string>class com.microchip.mcc.mcu8.modules.dac10bit.DAC10BIT</string>
+      </entry>
+      <entry>
+         <string>System Module</string>
+         <string>class com.microchip.mcc.mcu8.systemManager.SystemManager</string>
       </entry>
       <entry>
          <string>DAC4</string>
@@ -53,20 +53,20 @@
          <string>class com.microchip.mcc.mcu8.modules.cmp.CMP</string>
       </entry>
       <entry>
-         <string>CMP1</string>
-         <string>class com.microchip.mcc.mcu8.modules.cmp.CMP</string>
-      </entry>
-      <entry>
-         <string>OPA1</string>
-         <string>class com.microchip.mcc.mcu8.modules.opa.OPA</string>
-      </entry>
-      <entry>
          <string>INTERNAL OSCILLATOR</string>
          <string>class com.microchip.mcc.mcu8.systemManager.osc.Osc</string>
       </entry>
       <entry>
+         <string>CMP1</string>
+         <string>class com.microchip.mcc.mcu8.modules.cmp.CMP</string>
+      </entry>
+      <entry>
          <string>DAC1</string>
          <string>class com.microchip.mcc.mcu8.modules.dac10bit.DAC10BIT</string>
+      </entry>
+      <entry>
+         <string>OPA1</string>
+         <string>class com.microchip.mcc.mcu8.modules.opa.OPA</string>
       </entry>
       <entry>
          <string>OPA2</string>
@@ -167,7 +167,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="FVR" registerAlias="FVRCON" settingAlias="ADFVR"/>
-         <value>off</value>
+         <value>2x</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="Pin Module" registerAlias="RC3PPS" settingAlias="RC3PPS"/>
@@ -534,12 +534,12 @@
          <value>0</value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="CMP2" name="cmpIntermodule"/>
-         <value>enabled</value>
-      </entry>
-      <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="OPA1" registerAlias="OPAORS" settingAlias="OPAORS" alias="PWM9_out"/>
          <value>6</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="CMP2" name="cmpIntermodule"/>
+         <value>enabled</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="CMP1" registerAlias="CMNSEL" settingAlias="CNCH" alias="FVR_Buffer2"/>
@@ -1014,12 +1014,12 @@
          <value>1</value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="OPA1" registerAlias="OPAORS" settingAlias="OPAORS" alias="LC4_out"/>
-         <value>23</value>
-      </entry>
-      <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="DAC5" registerAlias="DACCON0" settingAlias="DACNSS" alias="DAC5REF1-"/>
          <value>2</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="OPA1" registerAlias="OPAORS" settingAlias="OPAORS" alias="LC4_out"/>
+         <value>23</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="INTERNAL OSCILLATOR" registerAlias="OSCSTAT" settingAlias="LFIOFR" alias="disabled"/>
@@ -1254,12 +1254,12 @@
          <value>1</value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="CMP2" registerAlias="CMCON1" settingAlias="CINTN"/>
-         <value>no_intFlag</value>
-      </entry>
-      <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="DAC1" registerAlias="DACCON0" settingAlias="DACPSS" alias="VREF+"/>
          <value>1</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="CMP2" registerAlias="CMCON1" settingAlias="CINTN"/>
+         <value>no_intFlag</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="Pin Module" registerAlias="OPTION_REG"/>
@@ -1330,12 +1330,12 @@
          <value>0</value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="OPA2" registerAlias="OPACON" settingAlias="OPAORM"/>
-         <value>disabled</value>
-      </entry>
-      <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="FVR" registerAlias="FVRCON" settingAlias="TSEN" alias="enabled"/>
          <value>1</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="OPA2" registerAlias="OPACON" settingAlias="OPAORM"/>
+         <value>disabled</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="DAC1" registerAlias="DACCON0" settingAlias="DACFM" alias="right justified"/>
@@ -1714,11 +1714,11 @@
          <value>1</value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="OPA2" registerAlias="OPACON" settingAlias="OPAORPOL" alias="not inverted"/>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="ADC" name="AquisitionTime"/>
          <value>0</value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="ADC" name="AquisitionTime"/>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="OPA2" registerAlias="OPACON" settingAlias="OPAORPOL" alias="not inverted"/>
          <value>0</value>
       </entry>
       <entry>
@@ -1755,7 +1755,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="FVR" registerAlias="FVRCON"/>
-         <value>0</value>
+         <value>130</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="Pin Module" registerAlias="IOCBP" settingAlias="IOCBP7" alias="enabled"/>
@@ -2030,12 +2030,12 @@
          <value>0</value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="System Module" registerAlias="CONFIG1" settingAlias="CP" alias="OFF"/>
-         <value>128</value>
-      </entry>
-      <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="Interrupt Module" name="IVT_NAME"/>
          <value>IVT1</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="System Module" registerAlias="CONFIG1" settingAlias="CP" alias="OFF"/>
+         <value>128</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="Pin Module" registerAlias="TRISE" settingAlias="TRISE3"/>
@@ -2250,12 +2250,12 @@
          <value>128</value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="DAC4" registerAlias="DACCON0" settingAlias="DACEN" alias="enabled"/>
-         <value>1</value>
-      </entry>
-      <entry>
          <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="DAC3" registerAlias="DACCON0"/>
          <value>128</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="DAC4" registerAlias="DACCON0" settingAlias="DACEN" alias="enabled"/>
+         <value>1</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="DAC5" registerAlias="DACCON0"/>
@@ -3006,12 +3006,12 @@
          <value>6</value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="CMP2" registerAlias="CMPSEL" settingAlias="CPCH" alias="DAC3"/>
-         <value>7</value>
-      </entry>
-      <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="OPA1" registerAlias="OPAPCHS" settingAlias="OPAPCH" alias="FVR_Buffer1"/>
          <value>6</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="CMP2" registerAlias="CMPSEL" settingAlias="CPCH" alias="DAC3"/>
+         <value>7</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="CMP2" registerAlias="CMPSEL" settingAlias="CPCH" alias="DAC2"/>
@@ -3518,12 +3518,12 @@
          <value>enabled</value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="ADC" name="AN18"/>
-         <value>disabled</value>
-      </entry>
-      <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="DAC7" name="Dac_Intermodule"/>
          <value>enabled</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="ADC" name="AN18"/>
+         <value>disabled</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="Pin Module" registerAlias="SLRCONB" settingAlias="SLRB1"/>
@@ -4170,12 +4170,12 @@
          <value>0</value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="OPA2" registerAlias="OPAORS" settingAlias="OPAORS" alias="LC1_out"/>
-         <value>20</value>
-      </entry>
-      <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="ADC" registerAlias="ADCON2" settingAlias="TRIGSEL" alias="PWM4OUT"/>
          <value>27</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="OPA2" registerAlias="OPAORS" settingAlias="OPAORS" alias="LC1_out"/>
+         <value>20</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="Pin Module" registerAlias="INLVLC" settingAlias="INLVLC2" alias="ST_input"/>
@@ -4246,12 +4246,12 @@
          <value>4</value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="FVR" registerAlias="FVRCON" settingAlias="CDAFVR" alias="1x"/>
-         <value>1</value>
-      </entry>
-      <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="ADC" registerAlias="ADCON0" settingAlias="CHS" alias="AN3"/>
          <value>3</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="FVR" registerAlias="FVRCON" settingAlias="CDAFVR" alias="1x"/>
+         <value>1</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="Pin Module" registerAlias="TRISC" settingAlias="TRISC6"/>
@@ -4358,12 +4358,12 @@
          <value>output</value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="OPA2" registerAlias="OPAORS" settingAlias="OPAORS" alias="COG2B"/>
-         <value>29</value>
-      </entry>
-      <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="ADC" registerAlias="ADCON0" settingAlias="CHS" alias="DAC2_Output"/>
          <value>60</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="OPA2" registerAlias="OPAORS" settingAlias="OPAORS" alias="COG2B"/>
+         <value>29</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="OPA2" registerAlias="OPAORS" settingAlias="OPAORS" alias="COG2D"/>
@@ -4694,12 +4694,12 @@
          <value>disabled</value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="DAC5" name="refPosRef"/>
-         <value>4.00</value>
-      </entry>
-      <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="DAC1" registerAlias="DACLD" settingAlias="DACLD" alias="unchanged"/>
          <value>0</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="DAC5" name="refPosRef"/>
+         <value>4.00</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="System Module" name="generateMain"/>
@@ -4718,12 +4718,12 @@
          <value>disabled</value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="CMP1" registerAlias="CMCON0" settingAlias="COUT"/>
-         <value>CPOL_VPVN</value>
-      </entry>
-      <entry>
          <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="DAC1" registerAlias="DACLD"/>
          <value>0</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="CMP1" registerAlias="CMCON0" settingAlias="COUT"/>
+         <value>CPOL_VPVN</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="CMP2" registerAlias="CMCON1" settingAlias="CINTN" alias="intFlag_neg"/>
@@ -5022,20 +5022,20 @@
          <value>19</value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="DAC4" registerAlias="DACCON1" settingAlias="DACR"/>
-         <value>6</value>
-      </entry>
-      <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="DAC7" name="refPosRef"/>
          <value>4.00</value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="OPA2" registerAlias="OPAORS" settingAlias="OPAORS" alias="COG2A"/>
-         <value>28</value>
+         <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="DAC4" registerAlias="DACCON1" settingAlias="DACR"/>
+         <value>6</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="ADC" name="DAC4_Output"/>
          <value>channel_DAC4_Output</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="OPA2" registerAlias="OPAORS" settingAlias="OPAORS" alias="COG2A"/>
+         <value>28</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="DAC1" name="refPosRef"/>
@@ -5082,12 +5082,12 @@
          <value>27</value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="OPA2" registerAlias="OPAORS" settingAlias="OPAORS" alias="COG1C"/>
-         <value>26</value>
-      </entry>
-      <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="ADC" name="ADC_ADIISRFunction"/>
          <value>ISR</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="OPA2" registerAlias="OPAORS" settingAlias="OPAORS" alias="COG1C"/>
+         <value>26</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="Pin Module" registerAlias="RB7PPS"/>
@@ -5599,7 +5599,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="FVR" name="adfvrVoltage"/>
-         <value/>
+         <value>2.048 V</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="DAC3" registerAlias="DACCON0" settingAlias="DACPSS" alias="VDD"/>
@@ -5950,12 +5950,12 @@
          <value>1</value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="CMP1" registerAlias="CMCON0" settingAlias="CSYNC" alias="asynchronous"/>
-         <value>0</value>
-      </entry>
-      <entry>
          <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="CMP5" registerAlias="CMNSEL"/>
          <value>8</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="CMP1" registerAlias="CMCON0" settingAlias="CSYNC" alias="asynchronous"/>
+         <value>0</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="ADC" registerAlias="ADCON0" settingAlias="CHS" alias="FVRBuffer1"/>
@@ -6031,7 +6031,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="FVR" registerAlias="FVRCON" settingAlias="FVREN"/>
-         <value>disabled</value>
+         <value>enabled</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="Pin Module" registerAlias="IOCCF" settingAlias="IOCCF6" alias="enabled"/>
@@ -6126,12 +6126,12 @@
          <value>0</value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="CMP1" registerAlias="CMCON0" settingAlias="CZLF"/>
-         <value>filtered</value>
-      </entry>
-      <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="CMP5" registerAlias="CMCON0" settingAlias="CPOL"/>
          <value>not inverted</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="CMP1" registerAlias="CMCON0" settingAlias="CZLF"/>
+         <value>filtered</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="Pin Module" name="anselUserSetRC6"/>
@@ -7006,12 +7006,12 @@
          <value>clear</value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="DAC4" name="refNegRef"/>
-         <value>0.00</value>
-      </entry>
-      <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="DAC5" registerAlias="DACCON0" settingAlias="DACOE2" alias="enabled"/>
          <value>1</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="DAC4" name="refNegRef"/>
+         <value>0.00</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="WDT" registerAlias="WDTCON0" settingAlias="WDTSEN"/>
@@ -7572,16 +7572,12 @@
          <hash>6304fb1e9841eb8e1418cae04afe86270d6af582215835803240daca30eb7b9a</hash>
       </entry>
       <entry>
-         <file>mcc_generated_files/opa2.h</file>
-         <hash>524c01b351e00170b3b256343adcde3ea13cf246bb4c5f4216919c1c8bf777f9</hash>
-      </entry>
-      <entry>
          <file>mcc_generated_files/dac5.c</file>
          <hash>65c2026f33abd9e0c7677e061b862c6487e727b2ca61128545b5268b6294658b</hash>
       </entry>
       <entry>
-         <file>mcc_generated_files/dac4.c</file>
-         <hash>e599a9fd2343662ef0d0bad937aaf86e166cb9ccfeaf9eff8ac698a2395a2590</hash>
+         <file>mcc_generated_files/opa2.h</file>
+         <hash>524c01b351e00170b3b256343adcde3ea13cf246bb4c5f4216919c1c8bf777f9</hash>
       </entry>
       <entry>
          <file>mcc_generated_files/cmp2.c</file>
@@ -7592,8 +7588,8 @@
          <hash>281a160db2e43dc2d162e2ee038d3c990d64908ef90a883b67ba70cff6a3f4cb</hash>
       </entry>
       <entry>
-         <file>mcc_generated_files/dac3.c</file>
-         <hash>75bf7b26877d3086ee70b3290d55c5742ba6eabb45ffb9364d6f6e2c22a28178</hash>
+         <file>mcc_generated_files/dac4.c</file>
+         <hash>e599a9fd2343662ef0d0bad937aaf86e166cb9ccfeaf9eff8ac698a2395a2590</hash>
       </entry>
       <entry>
          <file>mcc_generated_files/cmp1.c</file>
@@ -7602,6 +7598,10 @@
       <entry>
          <file>mcc_generated_files/mcc.h</file>
          <hash>9f276b21f2055d909ff3065b0628e1292425cf3da22304373e6142c7f442644d</hash>
+      </entry>
+      <entry>
+         <file>mcc_generated_files/dac3.c</file>
+         <hash>75bf7b26877d3086ee70b3290d55c5742ba6eabb45ffb9364d6f6e2c22a28178</hash>
       </entry>
       <entry>
          <file>mcc_generated_files/interrupt_manager.c</file>
@@ -7617,23 +7617,23 @@
       </entry>
       <entry>
          <file>mcc_generated_files/mcc.c</file>
-         <hash>9c32eb765a06a7ada01831e055666e66eafec9cd530b9736cdaf1e7325c7b682</hash>
-      </entry>
-      <entry>
-         <file>mcc_generated_files/fvr.h</file>
-         <hash>3141b994f105c4aacffbd1d6d6d4357d4b14d7e97907775e01ef4f4d8e91c94e</hash>
+         <hash>f793c8f57a4ecc4ea5991804b0c680ac8850b0cb429acff1b45dd72b156a7bb6</hash>
       </entry>
       <entry>
          <file>mcc_generated_files/opa2.c</file>
          <hash>3f7f8881895ed366b921eaec0a866d183d35ea942237b38c520a202ca9fa1579</hash>
       </entry>
       <entry>
-         <file>mcc_generated_files/pin_manager.c</file>
-         <hash>bff13680d3f2fba56bdbcc25735679fe7a953dd3237d59d2cbba29cc5dd73b68</hash>
+         <file>mcc_generated_files/fvr.h</file>
+         <hash>3141b994f105c4aacffbd1d6d6d4357d4b14d7e97907775e01ef4f4d8e91c94e</hash>
       </entry>
       <entry>
          <file>mcc_generated_files/cmp5.c</file>
          <hash>2b13d60e04e503a8b7cfce75bdb4e784a51ac31b4be6ed9a67982c2dace7d077</hash>
+      </entry>
+      <entry>
+         <file>mcc_generated_files/pin_manager.c</file>
+         <hash>bff13680d3f2fba56bdbcc25735679fe7a953dd3237d59d2cbba29cc5dd73b68</hash>
       </entry>
       <entry>
          <file>mcc_generated_files/opa1.c</file>
@@ -7645,7 +7645,11 @@
       </entry>
       <entry>
          <file>mcc_generated_files/fvr.c</file>
-         <hash>eb9d58002541602c0471a051865aa500589e0193bd3d3388987c55eec27f7572</hash>
+         <hash>4ff95a6794e2605d1b28576ab0d02bfe6d5a6d307f556b26a8cd9f7a9de3ac49</hash>
+      </entry>
+      <entry>
+         <file>mcc_generated_files/cmp5.h</file>
+         <hash>78b882d4a890bd962fc8d20529f68953d7056be5d45a680bf1da0bf5db697e84</hash>
       </entry>
       <entry>
          <file>mcc_generated_files/pin_manager.h</file>
@@ -7656,10 +7660,6 @@
          <hash>eff4a549350aecf51fafd669a679dd2e31d80e665f1b15e68b5968d65a9e9a21</hash>
       </entry>
       <entry>
-         <file>mcc_generated_files/cmp5.h</file>
-         <hash>78b882d4a890bd962fc8d20529f68953d7056be5d45a680bf1da0bf5db697e84</hash>
-      </entry>
-      <entry>
          <file>mcc_generated_files/dac5.h</file>
          <hash>5cf38d42f70fa9403a8c3a91b5dfc15f333389d6f5c8021f0202dadfc8b7b30e</hash>
       </entry>
@@ -7668,12 +7668,12 @@
          <hash>8f939c6aba9635ff474f2c026f7e4a22987ab90b69800052b421525e3f58cd1e</hash>
       </entry>
       <entry>
-         <file>mcc_generated_files/dac3.h</file>
-         <hash>ff3b6444905b26a7a573a2b91089854e0c7682b6f24cd4f58ffa30b2c811713d</hash>
-      </entry>
-      <entry>
          <file>main.c</file>
          <hash>198ef96aad2a66f690d62b05841952a4403fca3748a7bd4cb7428b9f7fc76572</hash>
+      </entry>
+      <entry>
+         <file>mcc_generated_files/dac3.h</file>
+         <hash>ff3b6444905b26a7a573a2b91089854e0c7682b6f24cd4f58ffa30b2c811713d</hash>
       </entry>
       <entry>
          <file>mcc_generated_files/dac7.c</file>

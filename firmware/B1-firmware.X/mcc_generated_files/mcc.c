@@ -53,16 +53,16 @@ void SYSTEM_Initialize(void)
     PIN_MANAGER_Initialize();
     OSCILLATOR_Initialize();
     WDT_Initialize();
-    DAC3_Initialize();
     CMP2_Initialize();
     FVR_Initialize();
+    DAC3_Initialize();
     DAC5_Initialize();
     OPA2_Initialize();
-    DAC4_Initialize();
     CMP1_Initialize();
-    DAC7_Initialize();
+    DAC4_Initialize();
     CMP5_Initialize();
     ADC_Initialize();
+    DAC7_Initialize();
     OPA1_Initialize();
     DAC1_Initialize();
 }

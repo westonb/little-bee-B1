@@ -8,36 +8,36 @@ Version 4.0 HI-TECH Software Intermediate Code
 "107
 [; ;mcc_generated_files/mcc.h: 107: void WDT_Initialize(void);
 [v _WDT_Initialize `(v ~T0 @X0 0 ef ]
-"93 mcc_generated_files/dac3.h
-[; ;mcc_generated_files/dac3.h: 93: void DAC3_Initialize(void);
-[v _DAC3_Initialize `(v ~T0 @X0 0 ef ]
 "92 mcc_generated_files/cmp2.h
 [; ;mcc_generated_files/cmp2.h: 92: void CMP2_Initialize(void);
 [v _CMP2_Initialize `(v ~T0 @X0 0 ef ]
 "93 mcc_generated_files/fvr.h
 [; ;mcc_generated_files/fvr.h: 93:  void FVR_Initialize(void);
 [v _FVR_Initialize `(v ~T0 @X0 0 ef ]
+"93 mcc_generated_files/dac3.h
+[; ;mcc_generated_files/dac3.h: 93: void DAC3_Initialize(void);
+[v _DAC3_Initialize `(v ~T0 @X0 0 ef ]
 "94 mcc_generated_files/dac5.h
 [; ;mcc_generated_files/dac5.h: 94: void DAC5_Initialize(void);
 [v _DAC5_Initialize `(v ~T0 @X0 0 ef ]
 "93 mcc_generated_files/opa2.h
 [; ;mcc_generated_files/opa2.h: 93: void OPA2_Initialize(void);
 [v _OPA2_Initialize `(v ~T0 @X0 0 ef ]
-"93 mcc_generated_files/dac4.h
-[; ;mcc_generated_files/dac4.h: 93: void DAC4_Initialize(void);
-[v _DAC4_Initialize `(v ~T0 @X0 0 ef ]
 "92 mcc_generated_files/cmp1.h
 [; ;mcc_generated_files/cmp1.h: 92: void CMP1_Initialize(void);
 [v _CMP1_Initialize `(v ~T0 @X0 0 ef ]
-"93 mcc_generated_files/dac7.h
-[; ;mcc_generated_files/dac7.h: 93: void DAC7_Initialize(void);
-[v _DAC7_Initialize `(v ~T0 @X0 0 ef ]
+"93 mcc_generated_files/dac4.h
+[; ;mcc_generated_files/dac4.h: 93: void DAC4_Initialize(void);
+[v _DAC4_Initialize `(v ~T0 @X0 0 ef ]
 "92 mcc_generated_files/cmp5.h
 [; ;mcc_generated_files/cmp5.h: 92: void CMP5_Initialize(void);
 [v _CMP5_Initialize `(v ~T0 @X0 0 ef ]
 "147 mcc_generated_files/adc.h
 [; ;mcc_generated_files/adc.h: 147: void ADC_Initialize(void);
 [v _ADC_Initialize `(v ~T0 @X0 0 ef ]
+"93 mcc_generated_files/dac7.h
+[; ;mcc_generated_files/dac7.h: 93: void DAC7_Initialize(void);
+[v _DAC7_Initialize `(v ~T0 @X0 0 ef ]
 "93 mcc_generated_files/opa1.h
 [; ;mcc_generated_files/opa1.h: 93: void OPA1_Initialize(void);
 [v _OPA1_Initialize `(v ~T0 @X0 0 ef ]
@@ -1763,14 +1763,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;mcc_generated_files/mcc.c: 55:     WDT_Initialize();
 [e ( _WDT_Initialize ..  ]
 "56
-[; ;mcc_generated_files/mcc.c: 56:     DAC3_Initialize();
-[e ( _DAC3_Initialize ..  ]
-"57
-[; ;mcc_generated_files/mcc.c: 57:     CMP2_Initialize();
+[; ;mcc_generated_files/mcc.c: 56:     CMP2_Initialize();
 [e ( _CMP2_Initialize ..  ]
-"58
-[; ;mcc_generated_files/mcc.c: 58:     FVR_Initialize();
+"57
+[; ;mcc_generated_files/mcc.c: 57:     FVR_Initialize();
 [e ( _FVR_Initialize ..  ]
+"58
+[; ;mcc_generated_files/mcc.c: 58:     DAC3_Initialize();
+[e ( _DAC3_Initialize ..  ]
 "59
 [; ;mcc_generated_files/mcc.c: 59:     DAC5_Initialize();
 [e ( _DAC5_Initialize ..  ]
@@ -1778,20 +1778,20 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;mcc_generated_files/mcc.c: 60:     OPA2_Initialize();
 [e ( _OPA2_Initialize ..  ]
 "61
-[; ;mcc_generated_files/mcc.c: 61:     DAC4_Initialize();
-[e ( _DAC4_Initialize ..  ]
-"62
-[; ;mcc_generated_files/mcc.c: 62:     CMP1_Initialize();
+[; ;mcc_generated_files/mcc.c: 61:     CMP1_Initialize();
 [e ( _CMP1_Initialize ..  ]
+"62
+[; ;mcc_generated_files/mcc.c: 62:     DAC4_Initialize();
+[e ( _DAC4_Initialize ..  ]
 "63
-[; ;mcc_generated_files/mcc.c: 63:     DAC7_Initialize();
-[e ( _DAC7_Initialize ..  ]
-"64
-[; ;mcc_generated_files/mcc.c: 64:     CMP5_Initialize();
+[; ;mcc_generated_files/mcc.c: 63:     CMP5_Initialize();
 [e ( _CMP5_Initialize ..  ]
-"65
-[; ;mcc_generated_files/mcc.c: 65:     ADC_Initialize();
+"64
+[; ;mcc_generated_files/mcc.c: 64:     ADC_Initialize();
 [e ( _ADC_Initialize ..  ]
+"65
+[; ;mcc_generated_files/mcc.c: 65:     DAC7_Initialize();
+[e ( _DAC7_Initialize ..  ]
 "66
 [; ;mcc_generated_files/mcc.c: 66:     OPA1_Initialize();
 [e ( _OPA1_Initialize ..  ]

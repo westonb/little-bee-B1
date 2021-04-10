@@ -60,7 +60,9 @@
 
 #define LED_WHITE (LED_GREEN | LED_BLUE | LED_RED)
 
-#define LOW_BATTERY_VOLTAGE 173
+#define LOW_BATTERY_VOLTAGE 173 //depreciated
+#define HIGH_FVR_VOLTAGE 460 
+//if 4.096V FVR reads too high supply is too low 2^10*2.048/5.012/0.91
 
 uint8_t mux_state = 0;
 uint8_t led_color_state = LED_OFF;
@@ -189,8 +191,14 @@ void zero_stage_2(void){
     uint16_t best_dac_val = 0;
     uint16_t stage_val;
     uint16_t best_val = 2000; 
+    uint16_t old_gain = MUX_SEL2_LAT;
+    
+    //switch gain to high gain
+    MUX_SEL2_LAT = 0;
+    __delay_ms(20);
     
     gnd_ref_val = average_adc_reading(GNDREF_SENSE);
+    
     
     for(uint16_t i = 0; i<1024; i++){
         
@@ -206,7 +214,7 @@ void zero_stage_2(void){
     }
     
     DAC5_Load10bitInputData(best_dac_val);
-    
+    MUX_SEL2_LAT = old_gain;
 }
 
 void init_sensor(void){
@@ -250,7 +258,7 @@ void main(void)
     led_color_state = LED_GREEN;
     mux_state = 0;
     SW2_ISR();//initialize LED and mux
-   
+    __delay_ms(100); //system warmup
     reset_sensor();
     init_sensor();
     //zeroing system may trip over range comparators 
@@ -267,7 +275,7 @@ void main(void)
     while (1)
     {
         __delay_ms(100);
-        if((average_adc_reading(VIN_SENSE)>>3) < LOW_BATTERY_VOLTAGE){
+        if((average_adc_reading(channel_FVRBuffer1)>>3) > HIGH_FVR_VOLTAGE){
             INTERRUPT_GlobalInterruptDisable();
             INTERRUPT_PeripheralInterruptDisable();
             low_battery_loop();
