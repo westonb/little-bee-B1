@@ -73,8 +73,6 @@ void set_led(uint8_t);
 void init_sensor(void);
 void reset_sensor(void);
 
-
-
 void my_CMP2_ISR(void){
     // clear the CMP2 interrupt flag
     PIR2bits.C2IF = 0;
@@ -168,60 +166,125 @@ void zero_stage_1(void){
     uint16_t gnd_ref_val;
     uint16_t best_dac_val = 0;
     uint16_t stage_val;
-    uint16_t best_val = (1<<12); 
+    int16_t best_val = (1<<12); 
+    int16_t diff_value;
+    
+    uint16_t start_dac;
+    uint16_t end_dac;
+    
+    uint16_t old_bw = MUX_SEL1_LAT;
     
     gnd_ref_val = average_adc_reading(GNDREF_SENSE);
     
-    for(uint16_t i = 0; i<1024; i++){
+    //switch bw to low 
+    MUX_SEL1_LAT = 0;
+    //initial ranging 
+     DAC1_Load10bitInputData(512);
+     __delay_ms(10);
+    stage_val = average_adc_reading(STAGE1_MON);
+    diff_value = (int16_t) stage_val - (int16_t) gnd_ref_val;
+    
+    if(diff_value > 100){
+        start_dac = 0;
+        end_dac = 512;
+    }
+    else if (diff_value < -100 ){
+        start_dac = 512;
+        end_dac = 1024;
+    }
+    else{
+        start_dac = 255;
+        end_dac = 768;
+    }
+    
+    DAC1_Load10bitInputData(start_dac);
+    __delay_ms(10);
+    
+    for(uint16_t i = start_dac; i<end_dac; i++){
         
         DAC1_Load10bitInputData(i);
-        __delay_ms(1);
+        __delay_ms(3);
+        //__delay_us(100);
         stage_val = average_adc_reading(STAGE1_MON);
-        
-        if ((stage_val-gnd_ref_val) < best_val){
-            best_val = (stage_val - gnd_ref_val);
+        diff_value = (int16_t) stage_val - (int16_t) gnd_ref_val;
+        if (abs(diff_value)< abs(best_val)){
+            best_val = diff_value;
             best_dac_val = i;
         }
     }
     DAC1_Load10bitInputData(best_dac_val);
+    MUX_SEL1_LAT = old_bw;
 }
 
 void zero_stage_2(void){
     uint16_t gnd_ref_val;
     uint16_t best_dac_val = 0;
     uint16_t stage_val;
-    uint16_t best_val = 2000; 
+
     uint16_t old_gain = MUX_SEL2_LAT;
+    uint16_t old_bw = MUX_SEL1_LAT;
+    
+    int16_t best_val = (1<<12); 
+    int16_t diff_value;
+    
+    uint16_t start_dac;
+    uint16_t end_dac;
     
     //switch gain to high gain
     MUX_SEL2_LAT = 0;
+    //switch bw to low 
+    MUX_SEL1_LAT = 0;
     __delay_ms(20);
     
     gnd_ref_val = average_adc_reading(GNDREF_SENSE);
     
+     //initial ranging 
+     DAC5_Load10bitInputData(512);
+     __delay_ms(5);
+    stage_val = average_adc_reading(STAGE2_MON);
+    diff_value = (int16_t) stage_val - (int16_t) gnd_ref_val;
     
-    for(uint16_t i = 0; i<1024; i++){
+    if(diff_value < -100){
+        start_dac = 0;
+        end_dac = 512;
+    }
+    else if (diff_value > 100 ){
+        start_dac = 512;
+        end_dac = 1024;
+    }
+    else{
+        start_dac = 255;
+        end_dac = 768;
+    }
+    
+    DAC5_Load10bitInputData(start_dac);
+    __delay_ms(10);
+    
+    for(uint16_t i = start_dac; i<end_dac; i = i+2){
         
         DAC5_Load10bitInputData(i);
-        __delay_ms(1);
+      __delay_ms(2);
+        //__delay_us(100);
         stage_val = average_adc_reading(STAGE2_MON);
         
-        if ((stage_val-gnd_ref_val) < best_val){
-            best_val = (stage_val - gnd_ref_val);
+        diff_value = (int16_t) stage_val - (int16_t) gnd_ref_val;
+        
+        if (abs(diff_value)< abs(best_val)){
+            best_val = diff_value;
             best_dac_val = i;
         }
-        
     }
     
     DAC5_Load10bitInputData(best_dac_val);
     MUX_SEL2_LAT = old_gain;
+    MUX_SEL1_LAT = old_bw;
 }
 
 void init_sensor(void){
     
-    __delay_ms(50);
+    __delay_ms(10);
     zero_stage_1();
-    __delay_ms(50);
+    __delay_ms(10);
     zero_stage_2();
     
 }
@@ -255,12 +318,30 @@ void main(void)
     DAC3_SetOutput(24); //set overload high comparator  
     DAC4_SetOutput(8); //set overload low comparator 
     
+    //init offset dac
+    DAC5_Load10bitInputData(512);
+    DAC1_Load10bitInputData(512);
+    __delay_ms(50);
+    
+    //absolute field sensing / debug mode
+    if((SW1_GetValue() == 0) && (SW2_GetValue() == 0)){
+        set_led(LED_PURPLE);
+        while(1){
+            SR_SetLow();
+            __delay_ms(9);
+            SR_SetHigh();
+            __delay_ms(9);
+        }
+        
+    }
+    
     led_color_state = LED_GREEN;
     mux_state = 0;
     SW2_ISR();//initialize LED and mux
-    __delay_ms(100); //system warmup
+    __delay_ms(800); //system warmup
     reset_sensor();
     init_sensor();
+    //init_sensor();
     //zeroing system may trip over range comparators 
     PIR2bits.C2IF = 0;
     PIR2bits.C1IF = 0;
@@ -268,13 +349,15 @@ void main(void)
     IOCBF0_SetInterruptHandler(SW2_ISR);
     //set interrupt handler for SW1
     IOCCF7_SetInterruptHandler(SW1_ISR); 
-    
+    set_led(LED_OFF);
+    __delay_ms(200);
+    set_led(led_color_state);
     INTERRUPT_GlobalInterruptEnable();
     INTERRUPT_PeripheralInterruptEnable();
     
     while (1)
     {
-        __delay_ms(100);
+        __delay_ms(500);
         if((average_adc_reading(channel_FVRBuffer1)>>3) > HIGH_FVR_VOLTAGE){
             INTERRUPT_GlobalInterruptDisable();
             INTERRUPT_PeripheralInterruptDisable();

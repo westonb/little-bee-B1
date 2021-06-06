@@ -2,6 +2,12 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/home/wbraun/projects/little-bee-B1/firmware/B1-firmware.X/mcc_generated_files/adc.h</file>
+            <file>file:/home/wbraun/projects/little-bee-B1/firmware/B1-firmware.X/mcc_generated_files/pin_manager.c</file>
+            <file>file:/home/wbraun/projects/little-bee-B1/firmware/B1-firmware.X/main.c</file>
+            <file>file:/home/wbraun/projects/little-bee-B1/firmware/B1-firmware.X/mcc_generated_files/mcc.h</file>
+            <file>file:/home/wbraun/projects/little-bee-B1/firmware/B1-firmware.X/mcc_generated_files/pin_manager.h</file>
+        </group>
     </open-files>
 </project-private>

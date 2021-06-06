@@ -19670,8 +19670,6 @@ void set_led(uint8_t);
 void init_sensor(void);
 void reset_sensor(void);
 
-
-
 void my_CMP2_ISR(void){
 
     PIR2bits.C2IF = 0;
@@ -19765,60 +19763,125 @@ void zero_stage_1(void){
     uint16_t gnd_ref_val;
     uint16_t best_dac_val = 0;
     uint16_t stage_val;
-    uint16_t best_val = (1<<12);
+    int16_t best_val = (1<<12);
+    int16_t diff_value;
+
+    uint16_t start_dac;
+    uint16_t end_dac;
+
+    uint16_t old_bw = LATAbits.LATA7;
 
     gnd_ref_val = average_adc_reading(GNDREF_SENSE);
 
-    for(uint16_t i = 0; i<1024; i++){
+
+    LATAbits.LATA7 = 0;
+
+     DAC1_Load10bitInputData(512);
+     _delay((unsigned long)((10)*(8000000/4000.0)));
+    stage_val = average_adc_reading(STAGE1_MON);
+    diff_value = (int16_t) stage_val - (int16_t) gnd_ref_val;
+
+    if(diff_value > 100){
+        start_dac = 0;
+        end_dac = 512;
+    }
+    else if (diff_value < -100 ){
+        start_dac = 512;
+        end_dac = 1024;
+    }
+    else{
+        start_dac = 255;
+        end_dac = 768;
+    }
+
+    DAC1_Load10bitInputData(start_dac);
+    _delay((unsigned long)((10)*(8000000/4000.0)));
+
+    for(uint16_t i = start_dac; i<end_dac; i++){
 
         DAC1_Load10bitInputData(i);
-        _delay((unsigned long)((1)*(8000000/4000.0)));
-        stage_val = average_adc_reading(STAGE1_MON);
+        _delay((unsigned long)((3)*(8000000/4000.0)));
 
-        if ((stage_val-gnd_ref_val) < best_val){
-            best_val = (stage_val - gnd_ref_val);
+        stage_val = average_adc_reading(STAGE1_MON);
+        diff_value = (int16_t) stage_val - (int16_t) gnd_ref_val;
+        if (abs(diff_value)< abs(best_val)){
+            best_val = diff_value;
             best_dac_val = i;
         }
     }
     DAC1_Load10bitInputData(best_dac_val);
+    LATAbits.LATA7 = old_bw;
 }
 
 void zero_stage_2(void){
     uint16_t gnd_ref_val;
     uint16_t best_dac_val = 0;
     uint16_t stage_val;
-    uint16_t best_val = 2000;
+
     uint16_t old_gain = LATBbits.LATB4;
+    uint16_t old_bw = LATAbits.LATA7;
+
+    int16_t best_val = (1<<12);
+    int16_t diff_value;
+
+    uint16_t start_dac;
+    uint16_t end_dac;
 
 
     LATBbits.LATB4 = 0;
+
+    LATAbits.LATA7 = 0;
     _delay((unsigned long)((20)*(8000000/4000.0)));
 
     gnd_ref_val = average_adc_reading(GNDREF_SENSE);
 
 
-    for(uint16_t i = 0; i<1024; i++){
+     DAC5_Load10bitInputData(512);
+     _delay((unsigned long)((5)*(8000000/4000.0)));
+    stage_val = average_adc_reading(STAGE2_MON);
+    diff_value = (int16_t) stage_val - (int16_t) gnd_ref_val;
+
+    if(diff_value < -100){
+        start_dac = 0;
+        end_dac = 512;
+    }
+    else if (diff_value > 100 ){
+        start_dac = 512;
+        end_dac = 1024;
+    }
+    else{
+        start_dac = 255;
+        end_dac = 768;
+    }
+
+    DAC5_Load10bitInputData(start_dac);
+    _delay((unsigned long)((10)*(8000000/4000.0)));
+
+    for(uint16_t i = start_dac; i<end_dac; i = i+2){
 
         DAC5_Load10bitInputData(i);
-        _delay((unsigned long)((1)*(8000000/4000.0)));
+      _delay((unsigned long)((2)*(8000000/4000.0)));
+
         stage_val = average_adc_reading(STAGE2_MON);
 
-        if ((stage_val-gnd_ref_val) < best_val){
-            best_val = (stage_val - gnd_ref_val);
+        diff_value = (int16_t) stage_val - (int16_t) gnd_ref_val;
+
+        if (abs(diff_value)< abs(best_val)){
+            best_val = diff_value;
             best_dac_val = i;
         }
-
     }
 
     DAC5_Load10bitInputData(best_dac_val);
     LATBbits.LATB4 = old_gain;
+    LATAbits.LATA7 = old_bw;
 }
 
 void init_sensor(void){
 
-    _delay((unsigned long)((50)*(8000000/4000.0)));
+    _delay((unsigned long)((10)*(8000000/4000.0)));
     zero_stage_1();
-    _delay((unsigned long)((50)*(8000000/4000.0)));
+    _delay((unsigned long)((10)*(8000000/4000.0)));
     zero_stage_2();
 
 }
@@ -19852,12 +19915,30 @@ void main(void)
     DAC3_SetOutput(24);
     DAC4_SetOutput(8);
 
+
+    DAC5_Load10bitInputData(512);
+    DAC1_Load10bitInputData(512);
+    _delay((unsigned long)((50)*(8000000/4000.0)));
+
+
+    if((PORTCbits.RC7 == 0) && (PORTBbits.RB0 == 0)){
+        set_led((0x1 | 0x4));
+        while(1){
+            do { LATAbits.LATA6 = 0; } while(0);
+            _delay((unsigned long)((9)*(8000000/4000.0)));
+            do { LATAbits.LATA6 = 1; } while(0);
+            _delay((unsigned long)((9)*(8000000/4000.0)));
+        }
+
+    }
+
     led_color_state = 0x2;
     mux_state = 0;
     SW2_ISR();
-    _delay((unsigned long)((100)*(8000000/4000.0)));
+    _delay((unsigned long)((800)*(8000000/4000.0)));
     reset_sensor();
     init_sensor();
+
 
     PIR2bits.C2IF = 0;
     PIR2bits.C1IF = 0;
@@ -19865,13 +19946,15 @@ void main(void)
     IOCBF0_SetInterruptHandler(SW2_ISR);
 
     IOCCF7_SetInterruptHandler(SW1_ISR);
-
+    set_led(0x0);
+    _delay((unsigned long)((200)*(8000000/4000.0)));
+    set_led(led_color_state);
     (INTCONbits.GIE = 1);
     (INTCONbits.PEIE = 1);
 
     while (1)
     {
-        _delay((unsigned long)((100)*(8000000/4000.0)));
+        _delay((unsigned long)((500)*(8000000/4000.0)));
         if((average_adc_reading(channel_FVRBuffer1)>>3) > 460){
             (INTCONbits.GIE = 0);
             (INTCONbits.PEIE = 0);
