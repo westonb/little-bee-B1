@@ -1,18 +1,4 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"713 /opt/microchip/mplabx/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8/pic/include/proc/pic16f1776.h
-[; ;/opt/microchip/mplabx/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8/pic/include/proc/pic16f1776.h: 713:     struct {
-[s S45 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S45 . CCP2IF C3IF C4IF BCL1IF COG1IF C1IF C2IF OSFIF ]
-"712
-[; ;/opt/microchip/mplabx/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8/pic/include/proc/pic16f1776.h: 712: typedef union {
-[u S44 `S45 1 ]
-[n S44 . . ]
-"724
-[; ;/opt/microchip/mplabx/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8/pic/include/proc/pic16f1776.h: 724: extern volatile PIR2bits_t PIR2bits __attribute__((address(0x012)));
-[v _PIR2bits `VS44 ~T0 @X0 0 e@18 ]
-"72 main.c
-[; ;main.c: 72: void set_led(uint8_t);
-[v _set_led `(v ~T0 @X0 0 ef1`uc ]
 "2679 /opt/microchip/mplabx/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8/pic/include/proc/pic16f1776.h
 [; ;/opt/microchip/mplabx/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8/pic/include/proc/pic16f1776.h: 2679:     struct {
 [s S128 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -35,12 +21,26 @@ Version 4.0 HI-TECH Software Intermediate Code
 "2752
 [; ;/opt/microchip/mplabx/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8/pic/include/proc/pic16f1776.h: 2752: extern volatile LATBbits_t LATBbits __attribute__((address(0x10D)));
 [v _LATBbits `VS129 ~T0 @X0 0 e@269 ]
+"2803
+[; ;/opt/microchip/mplabx/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8/pic/include/proc/pic16f1776.h: 2803:     struct {
+[s S132 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S132 . LATC0 LATC1 LATC2 LATC3 LATC4 LATC5 LATC6 LATC7 ]
+"2802
+[; ;/opt/microchip/mplabx/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8/pic/include/proc/pic16f1776.h: 2802: typedef union {
+[u S131 `S132 1 ]
+[n S131 . . ]
+"2814
+[; ;/opt/microchip/mplabx/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8/pic/include/proc/pic16f1776.h: 2814: extern volatile LATCbits_t LATCbits __attribute__((address(0x10E)));
+[v _LATCbits `VS131 ~T0 @X0 0 e@270 ]
+"75 main.c
+[; ;main.c: 75: void set_led(uint8_t);
+[v _set_led `(v ~T0 @X0 0 ef1`uc ]
 [v F11967 `(v ~T0 @X0 1 tf1`ul ]
 "92 /opt/microchip/mplabx/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8/pic/include/pic.h
 [v __delay `JF11967 ~T0 @X0 0 e ]
 [p i __delay ]
-"74 main.c
-[; ;main.c: 74: void reset_sensor(void);
+"77 main.c
+[; ;main.c: 77: void reset_sensor(void);
 [v _reset_sensor `(v ~T0 @X0 0 ef ]
 "559 /opt/microchip/mplabx/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8/pic/include/proc/pic16f1776.h
 [; ;/opt/microchip/mplabx/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8/pic/include/proc/pic16f1776.h: 559:     struct {
@@ -53,33 +53,33 @@ Version 4.0 HI-TECH Software Intermediate Code
 "570
 [; ;/opt/microchip/mplabx/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8/pic/include/proc/pic16f1776.h: 570: extern volatile PORTCbits_t PORTCbits __attribute__((address(0x00E)));
 [v _PORTCbits `VS37 ~T0 @X0 0 e@14 ]
-"73 main.c
-[; ;main.c: 73: void init_sensor(void);
+"76 main.c
+[; ;main.c: 76: void init_sensor(void);
 [v _init_sensor `(v ~T0 @X0 0 ef ]
-"146
-[; ;main.c: 146: uint16_t average_adc_reading(adc_channel_t read_ch){
+"713 /opt/microchip/mplabx/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8/pic/include/proc/pic16f1776.h
+[; ;/opt/microchip/mplabx/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8/pic/include/proc/pic16f1776.h: 713:     struct {
+[s S45 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S45 . CCP2IF C3IF C4IF BCL1IF COG1IF C1IF C2IF OSFIF ]
+"712
+[; ;/opt/microchip/mplabx/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8/pic/include/proc/pic16f1776.h: 712: typedef union {
+[u S44 `S45 1 ]
+[n S44 . . ]
+"724
+[; ;/opt/microchip/mplabx/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8/pic/include/proc/pic16f1776.h: 724: extern volatile PIR2bits_t PIR2bits __attribute__((address(0x012)));
+[v _PIR2bits `VS44 ~T0 @X0 0 e@18 ]
+"140 main.c
+[; ;main.c: 140: uint32_t average_adc_reading(adc_channel_t read_ch){
 [c E12086 0 13 14 15 33 42 50 55 57 58 59 60 61 62 63 .. ]
 [n E12086 . GNDREF_SENSE VIN_SENSE STAGE2_MON STAGE1_MON channel_Switched_AN1 channel_Switched_AN10 channel_Switched_AN18 channel_DAC7_Output channel_DAC5_Output channel_DAC4_Output channel_DAC3_Output channel_DAC2_Output channel_Temp channel_DAC1_Output channel_FVRBuffer1  ]
 "299 ./mcc_generated_files/adc.h
 [; ;./mcc_generated_files/adc.h: 299: adc_result_t ADC_GetConversion(adc_channel_t channel);
 [v _ADC_GetConversion `(us ~T0 @X0 0 ef1`E12086 ]
-"2803 /opt/microchip/mplabx/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8/pic/include/proc/pic16f1776.h
-[; ;/opt/microchip/mplabx/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8/pic/include/proc/pic16f1776.h: 2803:     struct {
-[s S132 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S132 . LATC0 LATC1 LATC2 LATC3 LATC4 LATC5 LATC6 LATC7 ]
-"2802
-[; ;/opt/microchip/mplabx/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8/pic/include/proc/pic16f1776.h: 2802: typedef union {
-[u S131 `S132 1 ]
-[n S131 . . ]
-"2814
-[; ;/opt/microchip/mplabx/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8/pic/include/proc/pic16f1776.h: 2814: extern volatile LATCbits_t LATCbits __attribute__((address(0x10E)));
-[v _LATCbits `VS131 ~T0 @X0 0 e@270 ]
 "156 ./mcc_generated_files/dac1.h
 [; ;./mcc_generated_files/dac1.h: 156: void DAC1_Load10bitInputData(uint16_t input10BitData);
 [v _DAC1_Load10bitInputData `(v ~T0 @X0 0 ef1`us ]
-"51 /opt/microchip/xc8/v2.31/pic/include/c99/stdlib.h
-[; ;/opt/microchip/xc8/v2.31/pic/include/c99/stdlib.h: 51: int abs (int);
-[v _abs `(i ~T0 @X0 0 ef1`i ]
+"52 /opt/microchip/xc8/v2.31/pic/include/c99/stdlib.h
+[; ;/opt/microchip/xc8/v2.31/pic/include/c99/stdlib.h: 52: long labs (long);
+[v _labs `(l ~T0 @X0 0 ef1`l ]
 "156 ./mcc_generated_files/dac5.h
 [; ;./mcc_generated_files/dac5.h: 156: void DAC5_Load10bitInputData(uint16_t input10BitData);
 [v _DAC5_Load10bitInputData `(v ~T0 @X0 0 ef1`us ]
@@ -1816,815 +1816,1193 @@ Version 4.0 HI-TECH Software Intermediate Code
 "37745
 [; ;/opt/microchip/mplabx/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8/pic/include/proc/pic16f1776.h: 37745: __asm("TOSH equ 0FEFh");
 [; <" TOSH equ 0FEFh ;# ">
-"67 main.c
-[; ;main.c: 67: uint8_t mux_state = 0;
+"70 main.c
+[; ;main.c: 70: uint8_t mux_state = 0;
 [v _mux_state `uc ~T0 @X0 1 e ]
 [i _mux_state
 -> -> 0 `i `uc
 ]
-"68
-[; ;main.c: 68: uint8_t led_color_state = 0x0;
+"71
+[; ;main.c: 71: uint8_t led_color_state = 0x0;
 [v _led_color_state `uc ~T0 @X0 1 e ]
 [i _led_color_state
 -> -> 0 `i `uc
 ]
-"76
-[; ;main.c: 76: void my_CMP2_ISR(void){
-[v _my_CMP2_ISR `(v ~T0 @X0 1 ef ]
-{
-[e :U _my_CMP2_ISR ]
-[f ]
-"78
-[; ;main.c: 78:     PIR2bits.C2IF = 0;
-[e = . . _PIR2bits 0 6 -> -> 0 `i `uc ]
-"79
-[; ;main.c: 79:     set_led(0x4);
-[e ( _set_led (1 -> -> 4 `i `uc ]
-"81
-[; ;main.c: 81: }
-[e :UE 1732 ]
-}
-"83
-[; ;main.c: 83: void my_CMP1_ISR(void){
-[v _my_CMP1_ISR `(v ~T0 @X0 1 ef ]
-{
-[e :U _my_CMP1_ISR ]
-[f ]
-"85
-[; ;main.c: 85:     PIR2bits.C1IF = 0;
-[e = . . _PIR2bits 0 5 -> -> 0 `i `uc ]
-"86
-[; ;main.c: 86:     set_led(0x4);
-[e ( _set_led (1 -> -> 4 `i `uc ]
-"87
-[; ;main.c: 87: }
-[e :UE 1733 ]
-}
-"90
-[; ;main.c: 90: void SW2_ISR(void){
+"80
+[; ;main.c: 80: void SW2_ISR(void){
 [v _SW2_ISR `(v ~T0 @X0 1 ef ]
 {
 [e :U _SW2_ISR ]
 [f ]
-"92
-[; ;main.c: 92:     switch(mux_state){
-[e $U 1736  ]
+"82
+[; ;main.c: 82:     switch(mux_state){
+[e $U 1734  ]
 {
-"93
-[; ;main.c: 93:         case 0:
-[e :U 1737 ]
-"94
-[; ;main.c: 94:             led_color_state = 0x2;
+"83
+[; ;main.c: 83:         case 0:
+[e :U 1735 ]
+"84
+[; ;main.c: 84:             led_color_state = 0x2;
 [e = _led_color_state -> -> 2 `i `uc ]
-"95
-[; ;main.c: 95:             LATAbits.LATA7 = 1;
+"85
+[; ;main.c: 85:             LATAbits.LATA7 = 1;
 [e = . . _LATAbits 0 7 -> -> 1 `i `uc ]
-"96
-[; ;main.c: 96:             LATBbits.LATB4 = 1;
+"86
+[; ;main.c: 86:             LATBbits.LATB4 = 1;
 [e = . . _LATBbits 0 4 -> -> 1 `i `uc ]
-"97
-[; ;main.c: 97:         break;
-[e $U 1735  ]
-"99
-[; ;main.c: 99:         case 1:
-[e :U 1738 ]
-"100
-[; ;main.c: 100:             led_color_state = (0x4 | 0x2);
+"87
+[; ;main.c: 87:         break;
+[e $U 1733  ]
+"89
+[; ;main.c: 89:         case 1:
+[e :U 1736 ]
+"90
+[; ;main.c: 90:             led_color_state = (0x4 | 0x2);
 [e = _led_color_state -> | -> 4 `i -> 2 `i `uc ]
-"101
-[; ;main.c: 101:             LATAbits.LATA7 = 0;
+"91
+[; ;main.c: 91:             LATAbits.LATA7 = 0;
 [e = . . _LATAbits 0 7 -> -> 0 `i `uc ]
-"102
-[; ;main.c: 102:             LATBbits.LATB4 = 1;
+"92
+[; ;main.c: 92:             LATBbits.LATB4 = 1;
 [e = . . _LATBbits 0 4 -> -> 1 `i `uc ]
-"103
-[; ;main.c: 103:         break;
-[e $U 1735  ]
-"105
-[; ;main.c: 105:         case 2:
-[e :U 1739 ]
-"106
-[; ;main.c: 106:             led_color_state = 0x1;
+"93
+[; ;main.c: 93:         break;
+[e $U 1733  ]
+"95
+[; ;main.c: 95:         case 2:
+[e :U 1737 ]
+"96
+[; ;main.c: 96:             led_color_state = 0x1;
 [e = _led_color_state -> -> 1 `i `uc ]
-"107
-[; ;main.c: 107:             LATAbits.LATA7 = 1;
+"97
+[; ;main.c: 97:             LATAbits.LATA7 = 1;
 [e = . . _LATAbits 0 7 -> -> 1 `i `uc ]
-"108
-[; ;main.c: 108:             LATBbits.LATB4 = 0;
+"98
+[; ;main.c: 98:             LATBbits.LATB4 = 0;
 [e = . . _LATBbits 0 4 -> -> 0 `i `uc ]
+"99
+[; ;main.c: 99:         break;
+[e $U 1733  ]
+"101
+[; ;main.c: 101:         case 3:
+[e :U 1738 ]
+"102
+[; ;main.c: 102:             led_color_state = (0x1 | 0x2);
+[e = _led_color_state -> | -> 1 `i -> 2 `i `uc ]
+"103
+[; ;main.c: 103:             LATAbits.LATA7 = 0;
+[e = . . _LATAbits 0 7 -> -> 0 `i `uc ]
+"104
+[; ;main.c: 104:             LATBbits.LATB4 = 0;
+[e = . . _LATBbits 0 4 -> -> 0 `i `uc ]
+"105
+[; ;main.c: 105:         break;
+[e $U 1733  ]
+"106
+[; ;main.c: 106:     }
+}
+[e $U 1733  ]
+[e :U 1734 ]
+[e [\ -> _mux_state `i , $ -> 0 `i 1735
+ , $ -> 1 `i 1736
+ , $ -> 2 `i 1737
+ , $ -> 3 `i 1738
+ 1733 ]
+[e :U 1733 ]
+"107
+[; ;main.c: 107:     if(~LATCbits.LATC6 && LATCbits.LATC5 && LATCbits.LATC4){
+[e $ ! && && != ~ -> . . _LATCbits 0 6 `i -> 0 `i != -> . . _LATCbits 0 5 `i -> 0 `i != -> . . _LATCbits 0 4 `i -> 0 `i 1739  ]
+{
 "109
-[; ;main.c: 109:         break;
-[e $U 1735  ]
+[; ;main.c: 109:     } else{
+}
+[e $U 1740  ]
+[e :U 1739 ]
+{
+"110
+[; ;main.c: 110:         set_led(led_color_state);
+[e ( _set_led (1 _led_color_state ]
 "111
-[; ;main.c: 111:         case 3:
+[; ;main.c: 111:     }
+}
 [e :U 1740 ]
 "112
-[; ;main.c: 112:             led_color_state = (0x1 | 0x2);
-[e = _led_color_state -> | -> 1 `i -> 2 `i `uc ]
-"113
-[; ;main.c: 113:             LATAbits.LATA7 = 0;
-[e = . . _LATAbits 0 7 -> -> 0 `i `uc ]
-"114
-[; ;main.c: 114:             LATBbits.LATB4 = 0;
-[e = . . _LATBbits 0 4 -> -> 0 `i `uc ]
-"115
-[; ;main.c: 115:         break;
-[e $U 1735  ]
-"116
-[; ;main.c: 116:     }
-}
-[e $U 1735  ]
-[e :U 1736 ]
-[e [\ -> _mux_state `i , $ -> 0 `i 1737
- , $ -> 1 `i 1738
- , $ -> 2 `i 1739
- , $ -> 3 `i 1740
- 1735 ]
-[e :U 1735 ]
-"117
-[; ;main.c: 117:     set_led(led_color_state);
-[e ( _set_led (1 _led_color_state ]
-"118
-[; ;main.c: 118:     mux_state = (mux_state+1)%4;
+[; ;main.c: 112:     mux_state = (mux_state+1)%4;
 [e = _mux_state -> % + -> _mux_state `i -> 1 `i -> 4 `i `uc ]
-"119
-[; ;main.c: 119:     _delay((unsigned long)((200)*(8000000/4000.0)));
+"113
+[; ;main.c: 113:     _delay((unsigned long)((200)*(8000000/4000.0)));
 [e ( __delay (1 -> * -> -> 200 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"120
-[; ;main.c: 120: }
-[e :UE 1734 ]
+"114
+[; ;main.c: 114: }
+[e :UE 1732 ]
 }
-"123
-[; ;main.c: 123: void SW1_ISR(void){
+"117
+[; ;main.c: 117: void SW1_ISR(void){
 [v _SW1_ISR `(v ~T0 @X0 1 ef ]
 {
 [e :U _SW1_ISR ]
 [f ]
-"126
-[; ;main.c: 126:     set_led(0x0);
+"120
+[; ;main.c: 120:     set_led(0x0);
 [e ( _set_led (1 -> -> 0 `i `uc ]
-"127
-[; ;main.c: 127:     _delay((unsigned long)((200)*(8000000/4000.0)));
+"121
+[; ;main.c: 121:     _delay((unsigned long)((200)*(8000000/4000.0)));
 [e ( __delay (1 -> * -> -> 200 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"128
-[; ;main.c: 128:     set_led(led_color_state);
+"122
+[; ;main.c: 122:     set_led(led_color_state);
 [e ( _set_led (1 _led_color_state ]
-"129
-[; ;main.c: 129:     reset_sensor();
+"123
+[; ;main.c: 123:     reset_sensor();
 [e ( _reset_sensor ..  ]
-"130
-[; ;main.c: 130:     _delay((unsigned long)((200)*(8000000/4000.0)));
-[e ( __delay (1 -> * -> -> 200 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"131
-[; ;main.c: 131:     if(PORTCbits.RC7 == 0){
+"124
+[; ;main.c: 124:     _delay((unsigned long)((400)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 400 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"125
+[; ;main.c: 125:     if(PORTCbits.RC7 == 0){
 [e $ ! == -> . . _PORTCbits 0 7 `i -> 0 `i 1742  ]
 {
-"133
-[; ;main.c: 133:         init_sensor();
+"127
+[; ;main.c: 127:         init_sensor();
 [e ( _init_sensor ..  ]
-"134
-[; ;main.c: 134:     }
+"128
+[; ;main.c: 128:     }
 }
 [e :U 1742 ]
-"137
-[; ;main.c: 137:     set_led(0x0);
+"131
+[; ;main.c: 131:     set_led(0x0);
 [e ( _set_led (1 -> -> 0 `i `uc ]
-"138
-[; ;main.c: 138:     _delay((unsigned long)((200)*(8000000/4000.0)));
+"132
+[; ;main.c: 132:     _delay((unsigned long)((200)*(8000000/4000.0)));
 [e ( __delay (1 -> * -> -> 200 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"139
-[; ;main.c: 139:     set_led(led_color_state);
+"133
+[; ;main.c: 133:     set_led(led_color_state);
 [e ( _set_led (1 _led_color_state ]
-"142
-[; ;main.c: 142:      PIR2bits.C2IF = 0;
+"136
+[; ;main.c: 136:      PIR2bits.C2IF = 0;
 [e = . . _PIR2bits 0 6 -> -> 0 `i `uc ]
-"143
-[; ;main.c: 143:      PIR2bits.C1IF = 0;
+"137
+[; ;main.c: 137:      PIR2bits.C1IF = 0;
 [e = . . _PIR2bits 0 5 -> -> 0 `i `uc ]
-"144
-[; ;main.c: 144: }
+"138
+[; ;main.c: 138: }
 [e :UE 1741 ]
 }
-"146
-[; ;main.c: 146: uint16_t average_adc_reading(adc_channel_t read_ch){
-[v _average_adc_reading `(us ~T0 @X0 1 ef1`E12086 ]
+"140
+[; ;main.c: 140: uint32_t average_adc_reading(adc_channel_t read_ch){
+[v _average_adc_reading `(ul ~T0 @X0 1 ef1`E12086 ]
 {
 [e :U _average_adc_reading ]
 [v _read_ch `E12086 ~T0 @X0 1 r1 ]
 [f ]
-"148
-[; ;main.c: 148:     uint16_t averaged_val = 0;
-[v _averaged_val `us ~T0 @X0 1 a ]
-[e = _averaged_val -> -> 0 `i `us ]
-"149
-[; ;main.c: 149:     for (int i = 0; i<8; i++){
+"142
+[; ;main.c: 142:     uint32_t averaged_val = 0;
+[v _averaged_val `ul ~T0 @X0 1 a ]
+[e = _averaged_val -> -> -> 0 `i `l `ul ]
+"144
+[; ;main.c: 144:     averaged_val = ADC_GetConversion(read_ch);
+[e = _averaged_val -> ( _ADC_GetConversion (1 _read_ch `ul ]
+"145
+[; ;main.c: 145:     averaged_val = 0;
+[e = _averaged_val -> -> -> 0 `i `l `ul ]
+"146
+[; ;main.c: 146:     for (int i = 0; i<(1<<8); i++){
 {
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 0 `i ]
-[e $ < _i -> 8 `i 1744  ]
+[e $ < _i << -> 1 `i -> 8 `i 1744  ]
 [e $U 1745  ]
 [e :U 1744 ]
 {
-"150
-[; ;main.c: 150:         averaged_val = averaged_val + ADC_GetConversion(read_ch);
-[e = _averaged_val -> + -> _averaged_val `ui -> ( _ADC_GetConversion (1 _read_ch `ui `us ]
-"151
-[; ;main.c: 151:     }
+"147
+[; ;main.c: 147:         averaged_val = averaged_val + ADC_GetConversion(read_ch);
+[e = _averaged_val + _averaged_val -> ( _ADC_GetConversion (1 _read_ch `ul ]
+"148
+[; ;main.c: 148:     }
 }
 [e ++ _i -> 1 `i ]
-[e $ < _i -> 8 `i 1744  ]
+[e $ < _i << -> 1 `i -> 8 `i 1744  ]
 [e :U 1745 ]
 }
-"153
-[; ;main.c: 153:     averaged_val = averaged_val;
-[e = _averaged_val _averaged_val ]
-"155
-[; ;main.c: 155:     return averaged_val;
+"150
+[; ;main.c: 150:     return averaged_val;
 [e ) _averaged_val ]
 [e $UE 1743  ]
-"156
-[; ;main.c: 156: }
+"151
+[; ;main.c: 151: }
 [e :UE 1743 ]
 }
+"153
+[; ;main.c: 153: uint32_t average_adc_reading_quick(adc_channel_t read_ch){
+[v _average_adc_reading_quick `(ul ~T0 @X0 1 ef1`E12086 ]
+{
+[e :U _average_adc_reading_quick ]
+[v _read_ch `E12086 ~T0 @X0 1 r1 ]
+[f ]
+"155
+[; ;main.c: 155:     uint32_t averaged_val = 0;
+[v _averaged_val `ul ~T0 @X0 1 a ]
+[e = _averaged_val -> -> -> 0 `i `l `ul ]
+"157
+[; ;main.c: 157:     averaged_val = ADC_GetConversion(read_ch);
+[e = _averaged_val -> ( _ADC_GetConversion (1 _read_ch `ul ]
 "158
-[; ;main.c: 158: void set_led(uint8_t led_color) {
+[; ;main.c: 158:     averaged_val = 0;
+[e = _averaged_val -> -> -> 0 `i `l `ul ]
+"160
+[; ;main.c: 160:     for (int i = 0; i<(1<<(8 -4)); i++){
+{
+[v _i `i ~T0 @X0 1 a ]
+[e = _i -> 0 `i ]
+[e $ < _i << -> 1 `i - -> 8 `i -> 4 `i 1748  ]
+[e $U 1749  ]
+[e :U 1748 ]
+{
+"161
+[; ;main.c: 161:         averaged_val = averaged_val + ADC_GetConversion(read_ch);
+[e = _averaged_val + _averaged_val -> ( _ADC_GetConversion (1 _read_ch `ul ]
+"162
+[; ;main.c: 162:     }
+}
+[e ++ _i -> 1 `i ]
+[e $ < _i << -> 1 `i - -> 8 `i -> 4 `i 1748  ]
+[e :U 1749 ]
+}
+"164
+[; ;main.c: 164:     return (averaged_val<<4);
+[e ) << _averaged_val -> 4 `i ]
+[e $UE 1747  ]
+"165
+[; ;main.c: 165: }
+[e :UE 1747 ]
+}
+"168
+[; ;main.c: 168: void set_led(uint8_t led_color) {
 [v _set_led `(v ~T0 @X0 1 ef1`uc ]
 {
 [e :U _set_led ]
 [v _led_color `uc ~T0 @X0 1 r1 ]
 [f ]
-"160
-[; ;main.c: 160: LATCbits.LATC6 = (~led_color>>2)&1;
+"170
+[; ;main.c: 170: LATCbits.LATC6 = (~led_color>>2)&1;
 [e = . . _LATCbits 0 6 -> & >> ~ -> _led_color `i -> 2 `i -> 1 `i `uc ]
-"161
-[; ;main.c: 161: LATCbits.LATC5 = (~led_color>>1)&1;
+"171
+[; ;main.c: 171: LATCbits.LATC5 = (~led_color>>1)&1;
 [e = . . _LATCbits 0 5 -> & >> ~ -> _led_color `i -> 1 `i -> 1 `i `uc ]
-"162
-[; ;main.c: 162: LATCbits.LATC4 = (~led_color)&1;
+"172
+[; ;main.c: 172: LATCbits.LATC4 = (~led_color)&1;
 [e = . . _LATCbits 0 4 -> & ~ -> _led_color `i -> 1 `i `uc ]
-"164
-[; ;main.c: 164: }
-[e :UE 1747 ]
+"174
+[; ;main.c: 174: }
+[e :UE 1751 ]
 }
-"165
-[; ;main.c: 165: void zero_stage_1(void){
+"176
+[; ;main.c: 176: void zero_stage_1(void){
 [v _zero_stage_1 `(v ~T0 @X0 1 ef ]
 {
 [e :U _zero_stage_1 ]
 [f ]
-"166
-[; ;main.c: 166:     uint16_t gnd_ref_val;
-[v _gnd_ref_val `us ~T0 @X0 1 a ]
-"167
-[; ;main.c: 167:     uint16_t best_dac_val = 0;
+"177
+[; ;main.c: 177:     uint32_t gnd_ref_val;
+[v _gnd_ref_val `ul ~T0 @X0 1 a ]
+"178
+[; ;main.c: 178:     uint16_t best_dac_val = 0;
 [v _best_dac_val `us ~T0 @X0 1 a ]
 [e = _best_dac_val -> -> 0 `i `us ]
-"168
-[; ;main.c: 168:     uint16_t stage_val;
-[v _stage_val `us ~T0 @X0 1 a ]
-"169
-[; ;main.c: 169:     int16_t best_val = (1<<12);
-[v _best_val `s ~T0 @X0 1 a ]
-[e = _best_val -> << -> 1 `i -> 12 `i `s ]
-"170
-[; ;main.c: 170:     int16_t diff_value;
-[v _diff_value `s ~T0 @X0 1 a ]
-"172
-[; ;main.c: 172:     uint16_t start_dac;
-[v _start_dac `us ~T0 @X0 1 a ]
-"173
-[; ;main.c: 173:     uint16_t end_dac;
-[v _end_dac `us ~T0 @X0 1 a ]
-"175
-[; ;main.c: 175:     uint16_t old_bw = LATAbits.LATA7;
-[v _old_bw `us ~T0 @X0 1 a ]
-[e = _old_bw -> . . _LATAbits 0 7 `us ]
-"177
-[; ;main.c: 177:     gnd_ref_val = average_adc_reading(GNDREF_SENSE);
-[e = _gnd_ref_val ( _average_adc_reading (1 . `E12086 0 ]
+"179
+[; ;main.c: 179:     uint16_t best_dac_val_l;
+[v _best_dac_val_l `us ~T0 @X0 1 a ]
 "180
-[; ;main.c: 180:     LATAbits.LATA7 = 0;
-[e = . . _LATAbits 0 7 -> -> 0 `i `uc ]
+[; ;main.c: 180:     uint32_t stage_val;
+[v _stage_val `ul ~T0 @X0 1 a ]
+"181
+[; ;main.c: 181:     int32_t best_val = 262144;
+[v _best_val `l ~T0 @X0 1 a ]
+[e = _best_val -> 262144 `l ]
 "182
-[; ;main.c: 182:      DAC1_Load10bitInputData(512);
-[e ( _DAC1_Load10bitInputData (1 -> -> 512 `i `us ]
-"183
-[; ;main.c: 183:      _delay((unsigned long)((10)*(8000000/4000.0)));
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+[; ;main.c: 182:     int32_t diff_value;
+[v _diff_value `l ~T0 @X0 1 a ]
 "184
-[; ;main.c: 184:     stage_val = average_adc_reading(STAGE1_MON);
-[e = _stage_val ( _average_adc_reading (1 . `E12086 3 ]
+[; ;main.c: 184:     uint16_t start_dac;
+[v _start_dac `us ~T0 @X0 1 a ]
 "185
-[; ;main.c: 185:     diff_value = (int16_t) stage_val - (int16_t) gnd_ref_val;
-[e = _diff_value -> - -> -> _stage_val `s `i -> -> _gnd_ref_val `s `i `s ]
+[; ;main.c: 185:     uint16_t end_dac;
+[v _end_dac `us ~T0 @X0 1 a ]
 "187
-[; ;main.c: 187:     if(diff_value > 100){
-[e $ ! > -> _diff_value `i -> 100 `i 1749  ]
-{
+[; ;main.c: 187:     uint8_t old_bw = LATAbits.LATA7;
+[v _old_bw `uc ~T0 @X0 1 a ]
+[e = _old_bw . . _LATAbits 0 7 ]
 "188
-[; ;main.c: 188:         start_dac = 0;
-[e = _start_dac -> -> 0 `i `us ]
-"189
-[; ;main.c: 189:         end_dac = 512;
-[e = _end_dac -> -> 512 `i `us ]
-"190
-[; ;main.c: 190:     }
-}
-[e $U 1750  ]
+[; ;main.c: 188:     uint8_t old_gain = LATBbits.LATB4;
+[v _old_gain `uc ~T0 @X0 1 a ]
+[e = _old_gain . . _LATBbits 0 4 ]
 "191
-[; ;main.c: 191:     else if (diff_value < -100 ){
-[e :U 1749 ]
-[e $ ! < -> _diff_value `i -U -> 100 `i 1751  ]
-{
-"192
-[; ;main.c: 192:         start_dac = 512;
-[e = _start_dac -> -> 512 `i `us ]
+[; ;main.c: 191:     LATBbits.LATB4 = 1;
+[e = . . _LATBbits 0 4 -> -> 1 `i `uc ]
 "193
-[; ;main.c: 193:         end_dac = 1024;
-[e = _end_dac -> -> 1024 `i `us ]
-"194
-[; ;main.c: 194:     }
-}
-[e $U 1752  ]
-"195
-[; ;main.c: 195:     else{
-[e :U 1751 ]
-{
-"196
-[; ;main.c: 196:         start_dac = 255;
-[e = _start_dac -> -> 255 `i `us ]
+[; ;main.c: 193:     LATAbits.LATA7 = 0;
+[e = . . _LATAbits 0 7 -> -> 0 `i `uc ]
 "197
-[; ;main.c: 197:         end_dac = 768;
-[e = _end_dac -> -> 768 `i `us ]
+[; ;main.c: 197:     DAC1_Load10bitInputData(512);
+[e ( _DAC1_Load10bitInputData (1 -> -> 512 `i `us ]
 "198
-[; ;main.c: 198:     }
-}
-[e :U 1752 ]
-[e :U 1750 ]
-"200
-[; ;main.c: 200:     DAC1_Load10bitInputData(start_dac);
-[e ( _DAC1_Load10bitInputData (1 _start_dac ]
+[; ;main.c: 198:      _delay((unsigned long)((20)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 20 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"199
+[; ;main.c: 199:      gnd_ref_val = average_adc_reading(GNDREF_SENSE);
+[e = _gnd_ref_val ( _average_adc_reading (1 . `E12086 0 ]
 "201
-[; ;main.c: 201:     _delay((unsigned long)((10)*(8000000/4000.0)));
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"203
-[; ;main.c: 203:     for(uint16_t i = start_dac; i<end_dac; i++){
+[; ;main.c: 201:     stage_val = average_adc_reading(STAGE2_MON);
+[e = _stage_val ( _average_adc_reading (1 . `E12086 2 ]
+"202
+[; ;main.c: 202:     diff_value = (int32_t) stage_val - (int32_t) gnd_ref_val;
+[e = _diff_value - -> _stage_val `l -> _gnd_ref_val `l ]
+"204
+[; ;main.c: 204:     if(diff_value > ((1<<8)*50)){
+[e $ ! > _diff_value -> * << -> 1 `i -> 8 `i -> 50 `i `l 1753  ]
+{
+"205
+[; ;main.c: 205:         start_dac = 16;
+[e = _start_dac -> -> 16 `i `us ]
+"206
+[; ;main.c: 206:         end_dac = 512;
+[e = _end_dac -> -> 512 `i `us ]
+"207
+[; ;main.c: 207:     }
+}
+[e $U 1754  ]
+"208
+[; ;main.c: 208:     else if (diff_value < ((1<<8)*(-50)) ){
+[e :U 1753 ]
+[e $ ! < _diff_value -> * << -> 1 `i -> 8 `i -U -> 50 `i `l 1755  ]
+{
+"209
+[; ;main.c: 209:         start_dac = 512;
+[e = _start_dac -> -> 512 `i `us ]
+"210
+[; ;main.c: 210:         end_dac = 1007;
+[e = _end_dac -> -> 1007 `i `us ]
+"211
+[; ;main.c: 211:     }
+}
+[e $U 1756  ]
+"212
+[; ;main.c: 212:     else{
+[e :U 1755 ]
+{
+"213
+[; ;main.c: 213:         start_dac = 255;
+[e = _start_dac -> -> 255 `i `us ]
+"214
+[; ;main.c: 214:         end_dac = 768;
+[e = _end_dac -> -> 768 `i `us ]
+"215
+[; ;main.c: 215:     }
+}
+[e :U 1756 ]
+[e :U 1754 ]
+"217
+[; ;main.c: 217:     DAC1_Load10bitInputData(start_dac);
+[e ( _DAC1_Load10bitInputData (1 _start_dac ]
+"218
+[; ;main.c: 218:     _delay((unsigned long)((20)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 20 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"220
+[; ;main.c: 220:     stage_val = average_adc_reading(STAGE2_MON);
+[e = _stage_val ( _average_adc_reading (1 . `E12086 2 ]
+"221
+[; ;main.c: 221:     diff_value = (int32_t) stage_val - (int32_t) gnd_ref_val;
+[e = _diff_value - -> _stage_val `l -> _gnd_ref_val `l ]
+"223
+[; ;main.c: 223:     for(uint16_t i = start_dac; i<end_dac; i++){
 {
 [v _i `us ~T0 @X0 1 a ]
 [e = _i _start_dac ]
-[e $U 1756  ]
-[e :U 1753 ]
-{
-"205
-[; ;main.c: 205:         DAC1_Load10bitInputData(i);
-[e ( _DAC1_Load10bitInputData (1 _i ]
-"206
-[; ;main.c: 206:         _delay((unsigned long)((3)*(8000000/4000.0)));
-[e ( __delay (1 -> * -> -> 3 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"208
-[; ;main.c: 208:         stage_val = average_adc_reading(STAGE1_MON);
-[e = _stage_val ( _average_adc_reading (1 . `E12086 3 ]
-"209
-[; ;main.c: 209:         diff_value = (int16_t) stage_val - (int16_t) gnd_ref_val;
-[e = _diff_value -> - -> -> _stage_val `s `i -> -> _gnd_ref_val `s `i `s ]
-"210
-[; ;main.c: 210:         if (abs(diff_value)< abs(best_val)){
-[e $ ! < ( _abs (1 -> _diff_value `i ( _abs (1 -> _best_val `i 1757  ]
-{
-"211
-[; ;main.c: 211:             best_val = diff_value;
-[e = _best_val _diff_value ]
-"212
-[; ;main.c: 212:             best_dac_val = i;
-[e = _best_dac_val _i ]
-"213
-[; ;main.c: 213:         }
-}
+[e $U 1760  ]
 [e :U 1757 ]
-"214
-[; ;main.c: 214:     }
+{
+"225
+[; ;main.c: 225:         DAC1_Load10bitInputData(i);
+[e ( _DAC1_Load10bitInputData (1 _i ]
+"226
+[; ;main.c: 226:         if(i%10==0){
+[e $ ! == % -> _i `ui -> -> 10 `i `ui -> -> 0 `i `ui 1761  ]
+{
+"227
+[; ;main.c: 227:             gnd_ref_val = average_adc_reading_quick(GNDREF_SENSE);
+[e = _gnd_ref_val ( _average_adc_reading_quick (1 . `E12086 0 ]
+"228
+[; ;main.c: 228:         }
+}
+[e :U 1761 ]
+"229
+[; ;main.c: 229:         stage_val = average_adc_reading_quick(STAGE2_MON);
+[e = _stage_val ( _average_adc_reading_quick (1 . `E12086 2 ]
+"230
+[; ;main.c: 230:         diff_value = (int32_t) stage_val - (int32_t) gnd_ref_val;
+[e = _diff_value - -> _stage_val `l -> _gnd_ref_val `l ]
+"231
+[; ;main.c: 231:         if (labs(diff_value)<= labs(best_val)){
+[e $ ! <= ( _labs (1 _diff_value ( _labs (1 _best_val 1762  ]
+{
+"232
+[; ;main.c: 232:             best_val = diff_value;
+[e = _best_val _diff_value ]
+"233
+[; ;main.c: 233:             best_dac_val = i;
+[e = _best_dac_val _i ]
+"234
+[; ;main.c: 234:         }
+}
+[e :U 1762 ]
+"237
+[; ;main.c: 237:         if((diff_value > (1<<8)*5) && (i > start_dac+10) ){
+[e $ ! && > _diff_value -> * << -> 1 `i -> 8 `i -> 5 `i `l > -> _i `ui + -> _start_dac `ui -> -> 10 `i `ui 1763  ]
+{
+"238
+[; ;main.c: 238:             break;
+[e $U 1758  ]
+"239
+[; ;main.c: 239:         }
+}
+[e :U 1763 ]
+"240
+[; ;main.c: 240:     }
 }
 [e ++ _i -> -> 1 `i `us ]
-[e :U 1756 ]
-[e $ < -> _i `ui -> _end_dac `ui 1753  ]
-[e :U 1754 ]
+[e :U 1760 ]
+[e $ < -> _i `ui -> _end_dac `ui 1757  ]
+[e :U 1758 ]
 }
-"215
-[; ;main.c: 215:     DAC1_Load10bitInputData(best_dac_val);
+"242
+[; ;main.c: 242:     DAC1_Load10bitInputData(best_dac_val);
 [e ( _DAC1_Load10bitInputData (1 _best_dac_val ]
-"216
-[; ;main.c: 216:     LATAbits.LATA7 = old_bw;
-[e = . . _LATAbits 0 7 -> _old_bw `uc ]
-"217
-[; ;main.c: 217: }
-[e :UE 1748 ]
+"243
+[; ;main.c: 243:     _delay((unsigned long)((50)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 50 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"245
+[; ;main.c: 245:     gnd_ref_val = average_adc_reading(GNDREF_SENSE);
+[e = _gnd_ref_val ( _average_adc_reading (1 . `E12086 0 ]
+"246
+[; ;main.c: 246:     best_val = 262144;
+[e = _best_val -> 262144 `l ]
+"247
+[; ;main.c: 247:     start_dac = best_dac_val - 15;
+[e = _start_dac -> - -> _best_dac_val `ui -> -> 15 `i `ui `us ]
+"248
+[; ;main.c: 248:     end_dac = best_dac_val + 15;
+[e = _end_dac -> + -> _best_dac_val `ui -> -> 15 `i `ui `us ]
+"249
+[; ;main.c: 249:     DAC1_Load10bitInputData(start_dac);
+[e ( _DAC1_Load10bitInputData (1 _start_dac ]
+"250
+[; ;main.c: 250:     _delay((unsigned long)((100)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"251
+[; ;main.c: 251:     for(uint16_t i = start_dac; i<end_dac; i++){
+{
+[v _i `us ~T0 @X0 1 a ]
+[e = _i _start_dac ]
+[e $U 1767  ]
+[e :U 1764 ]
+{
+"253
+[; ;main.c: 253:         DAC1_Load10bitInputData(i);
+[e ( _DAC1_Load10bitInputData (1 _i ]
+"254
+[; ;main.c: 254:         stage_val = average_adc_reading(STAGE2_MON);
+[e = _stage_val ( _average_adc_reading (1 . `E12086 2 ]
+"255
+[; ;main.c: 255:         _delay((unsigned long)((2)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 2 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"256
+[; ;main.c: 256:         diff_value = (int32_t) stage_val - (int32_t) gnd_ref_val;
+[e = _diff_value - -> _stage_val `l -> _gnd_ref_val `l ]
+"257
+[; ;main.c: 257:         if (labs(diff_value)<= labs(best_val)){
+[e $ ! <= ( _labs (1 _diff_value ( _labs (1 _best_val 1768  ]
+{
+"258
+[; ;main.c: 258:             best_val = diff_value;
+[e = _best_val _diff_value ]
+"259
+[; ;main.c: 259:             best_dac_val = i;
+[e = _best_dac_val _i ]
+"260
+[; ;main.c: 260:         }
 }
-"219
-[; ;main.c: 219: void zero_stage_2(void){
+[e :U 1768 ]
+"261
+[; ;main.c: 261:     }
+}
+[e ++ _i -> -> 1 `i `us ]
+[e :U 1767 ]
+[e $ < -> _i `ui -> _end_dac `ui 1764  ]
+[e :U 1765 ]
+}
+"264
+[; ;main.c: 264:     best_dac_val_l = best_dac_val;
+[e = _best_dac_val_l _best_dac_val ]
+"265
+[; ;main.c: 265:     best_val = 262144;
+[e = _best_val -> 262144 `l ]
+"267
+[; ;main.c: 267:     for(uint16_t i = end_dac; i> start_dac; i--){
+{
+[v _i `us ~T0 @X0 1 a ]
+[e = _i _end_dac ]
+[e $U 1772  ]
+[e :U 1769 ]
+{
+"269
+[; ;main.c: 269:         DAC1_Load10bitInputData(i);
+[e ( _DAC1_Load10bitInputData (1 _i ]
+"270
+[; ;main.c: 270:         stage_val = average_adc_reading(STAGE2_MON);
+[e = _stage_val ( _average_adc_reading (1 . `E12086 2 ]
+"271
+[; ;main.c: 271:         _delay((unsigned long)((2)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 2 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"272
+[; ;main.c: 272:         diff_value = (int32_t) stage_val - (int32_t) gnd_ref_val;
+[e = _diff_value - -> _stage_val `l -> _gnd_ref_val `l ]
+"273
+[; ;main.c: 273:         if (labs(diff_value)<= labs(best_val)){
+[e $ ! <= ( _labs (1 _diff_value ( _labs (1 _best_val 1773  ]
+{
+"274
+[; ;main.c: 274:             best_val = diff_value;
+[e = _best_val _diff_value ]
+"275
+[; ;main.c: 275:             best_dac_val = i;
+[e = _best_dac_val _i ]
+"276
+[; ;main.c: 276:         }
+}
+[e :U 1773 ]
+"277
+[; ;main.c: 277:     }
+}
+[e -- _i -> -> 1 `i `us ]
+[e :U 1772 ]
+[e $ > -> _i `ui -> _start_dac `ui 1769  ]
+[e :U 1770 ]
+}
+"280
+[; ;main.c: 280:     best_dac_val = (best_dac_val + best_dac_val_l)>>1;
+[e = _best_dac_val -> >> + -> _best_dac_val `ui -> _best_dac_val_l `ui -> 1 `i `us ]
+"281
+[; ;main.c: 281:     DAC1_Load10bitInputData(best_dac_val);
+[e ( _DAC1_Load10bitInputData (1 _best_dac_val ]
+"282
+[; ;main.c: 282:     LATAbits.LATA7 = old_bw;
+[e = . . _LATAbits 0 7 _old_bw ]
+"283
+[; ;main.c: 283:     LATBbits.LATB4 = old_gain;
+[e = . . _LATBbits 0 4 _old_gain ]
+"284
+[; ;main.c: 284: }
+[e :UE 1752 ]
+}
+"288
+[; ;main.c: 288: void zero_stage_2(void){
 [v _zero_stage_2 `(v ~T0 @X0 1 ef ]
 {
 [e :U _zero_stage_2 ]
 [f ]
-"220
-[; ;main.c: 220:     uint16_t gnd_ref_val;
-[v _gnd_ref_val `us ~T0 @X0 1 a ]
-"221
-[; ;main.c: 221:     uint16_t best_dac_val = 0;
+"289
+[; ;main.c: 289:     uint32_t gnd_ref_val;
+[v _gnd_ref_val `ul ~T0 @X0 1 a ]
+"290
+[; ;main.c: 290:     uint16_t best_dac_val = 0;
 [v _best_dac_val `us ~T0 @X0 1 a ]
 [e = _best_dac_val -> -> 0 `i `us ]
-"222
-[; ;main.c: 222:     uint16_t stage_val;
-[v _stage_val `us ~T0 @X0 1 a ]
-"224
-[; ;main.c: 224:     uint16_t old_gain = LATBbits.LATB4;
-[v _old_gain `us ~T0 @X0 1 a ]
-[e = _old_gain -> . . _LATBbits 0 4 `us ]
-"225
-[; ;main.c: 225:     uint16_t old_bw = LATAbits.LATA7;
-[v _old_bw `us ~T0 @X0 1 a ]
-[e = _old_bw -> . . _LATAbits 0 7 `us ]
-"227
-[; ;main.c: 227:     int16_t best_val = (1<<12);
-[v _best_val `s ~T0 @X0 1 a ]
-[e = _best_val -> << -> 1 `i -> 12 `i `s ]
-"228
-[; ;main.c: 228:     int16_t diff_value;
-[v _diff_value `s ~T0 @X0 1 a ]
-"230
-[; ;main.c: 230:     uint16_t start_dac;
+"291
+[; ;main.c: 291:     uint32_t stage_val;
+[v _stage_val `ul ~T0 @X0 1 a ]
+"292
+[; ;main.c: 292:     uint16_t best_dac_val_l;
+[v _best_dac_val_l `us ~T0 @X0 1 a ]
+"294
+[; ;main.c: 294:     uint8_t old_gain = LATBbits.LATB4;
+[v _old_gain `uc ~T0 @X0 1 a ]
+[e = _old_gain . . _LATBbits 0 4 ]
+"295
+[; ;main.c: 295:     uint8_t old_bw = LATAbits.LATA7;
+[v _old_bw `uc ~T0 @X0 1 a ]
+[e = _old_bw . . _LATAbits 0 7 ]
+"297
+[; ;main.c: 297:     int32_t best_val = 262144;
+[v _best_val `l ~T0 @X0 1 a ]
+[e = _best_val -> 262144 `l ]
+"298
+[; ;main.c: 298:     int32_t diff_value;
+[v _diff_value `l ~T0 @X0 1 a ]
+"300
+[; ;main.c: 300:     uint16_t start_dac;
 [v _start_dac `us ~T0 @X0 1 a ]
-"231
-[; ;main.c: 231:     uint16_t end_dac;
+"301
+[; ;main.c: 301:     uint16_t end_dac;
 [v _end_dac `us ~T0 @X0 1 a ]
-"234
-[; ;main.c: 234:     LATBbits.LATB4 = 0;
+"304
+[; ;main.c: 304:     LATBbits.LATB4 = 0;
 [e = . . _LATBbits 0 4 -> -> 0 `i `uc ]
-"236
-[; ;main.c: 236:     LATAbits.LATA7 = 0;
+"306
+[; ;main.c: 306:     LATAbits.LATA7 = 0;
 [e = . . _LATAbits 0 7 -> -> 0 `i `uc ]
-"237
-[; ;main.c: 237:     _delay((unsigned long)((20)*(8000000/4000.0)));
-[e ( __delay (1 -> * -> -> 20 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"239
-[; ;main.c: 239:     gnd_ref_val = average_adc_reading(GNDREF_SENSE);
-[e = _gnd_ref_val ( _average_adc_reading (1 . `E12086 0 ]
-"242
-[; ;main.c: 242:      DAC5_Load10bitInputData(512);
+"309
+[; ;main.c: 309:     DAC5_Load10bitInputData(512);
 [e ( _DAC5_Load10bitInputData (1 -> -> 512 `i `us ]
-"243
-[; ;main.c: 243:      _delay((unsigned long)((5)*(8000000/4000.0)));
-[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"244
-[; ;main.c: 244:     stage_val = average_adc_reading(STAGE2_MON);
+"310
+[; ;main.c: 310:      _delay((unsigned long)((20)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 20 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"311
+[; ;main.c: 311:      gnd_ref_val = average_adc_reading(GNDREF_SENSE);
+[e = _gnd_ref_val ( _average_adc_reading (1 . `E12086 0 ]
+"313
+[; ;main.c: 313:     stage_val = average_adc_reading(STAGE2_MON);
 [e = _stage_val ( _average_adc_reading (1 . `E12086 2 ]
-"245
-[; ;main.c: 245:     diff_value = (int16_t) stage_val - (int16_t) gnd_ref_val;
-[e = _diff_value -> - -> -> _stage_val `s `i -> -> _gnd_ref_val `s `i `s ]
-"247
-[; ;main.c: 247:     if(diff_value < -100){
-[e $ ! < -> _diff_value `i -U -> 100 `i 1759  ]
+"314
+[; ;main.c: 314:     diff_value = (int32_t) stage_val - (int32_t) gnd_ref_val;
+[e = _diff_value - -> _stage_val `l -> _gnd_ref_val `l ]
+"316
+[; ;main.c: 316:     if(diff_value < ((1<<8)*-8)){
+[e $ ! < _diff_value -> * << -> 1 `i -> 8 `i -U -> 8 `i `l 1775  ]
 {
-"248
-[; ;main.c: 248:         start_dac = 0;
-[e = _start_dac -> -> 0 `i `us ]
-"249
-[; ;main.c: 249:         end_dac = 512;
+"317
+[; ;main.c: 317:         start_dac = 16;
+[e = _start_dac -> -> 16 `i `us ]
+"318
+[; ;main.c: 318:         end_dac = 512;
 [e = _end_dac -> -> 512 `i `us ]
-"250
-[; ;main.c: 250:     }
+"319
+[; ;main.c: 319:     }
 }
-[e $U 1760  ]
-"251
-[; ;main.c: 251:     else if (diff_value > 100 ){
-[e :U 1759 ]
-[e $ ! > -> _diff_value `i -> 100 `i 1761  ]
+[e $U 1776  ]
+"320
+[; ;main.c: 320:     else if (diff_value > ((1<<8)*8) ){
+[e :U 1775 ]
+[e $ ! > _diff_value -> * << -> 1 `i -> 8 `i -> 8 `i `l 1777  ]
 {
-"252
-[; ;main.c: 252:         start_dac = 512;
+"321
+[; ;main.c: 321:         start_dac = 512;
 [e = _start_dac -> -> 512 `i `us ]
-"253
-[; ;main.c: 253:         end_dac = 1024;
-[e = _end_dac -> -> 1024 `i `us ]
-"254
-[; ;main.c: 254:     }
+"322
+[; ;main.c: 322:         end_dac = 1007;
+[e = _end_dac -> -> 1007 `i `us ]
+"323
+[; ;main.c: 323:     }
 }
-[e $U 1762  ]
-"255
-[; ;main.c: 255:     else{
-[e :U 1761 ]
+[e $U 1778  ]
+"324
+[; ;main.c: 324:     else{
+[e :U 1777 ]
 {
-"256
-[; ;main.c: 256:         start_dac = 255;
+"325
+[; ;main.c: 325:         start_dac = 255;
 [e = _start_dac -> -> 255 `i `us ]
-"257
-[; ;main.c: 257:         end_dac = 768;
+"326
+[; ;main.c: 326:         end_dac = 768;
 [e = _end_dac -> -> 768 `i `us ]
-"258
-[; ;main.c: 258:     }
+"327
+[; ;main.c: 327:     }
 }
-[e :U 1762 ]
-[e :U 1760 ]
-"260
-[; ;main.c: 260:     DAC5_Load10bitInputData(start_dac);
+[e :U 1778 ]
+[e :U 1776 ]
+"330
+[; ;main.c: 330:     DAC5_Load10bitInputData(start_dac);
 [e ( _DAC5_Load10bitInputData (1 _start_dac ]
-"261
-[; ;main.c: 261:     _delay((unsigned long)((10)*(8000000/4000.0)));
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"263
-[; ;main.c: 263:     for(uint16_t i = start_dac; i<end_dac; i = i+2){
+"331
+[; ;main.c: 331:     _delay((unsigned long)((20)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 20 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"333
+[; ;main.c: 333:     stage_val = average_adc_reading(STAGE2_MON);
+[e = _stage_val ( _average_adc_reading (1 . `E12086 2 ]
+"334
+[; ;main.c: 334:     diff_value = (int32_t) stage_val - (int32_t) gnd_ref_val;
+[e = _diff_value - -> _stage_val `l -> _gnd_ref_val `l ]
+"336
+[; ;main.c: 336:     for(uint16_t i = start_dac; i<end_dac; i++){
 {
 [v _i `us ~T0 @X0 1 a ]
 [e = _i _start_dac ]
-[e $U 1766  ]
-[e :U 1763 ]
+[e $U 1782  ]
+[e :U 1779 ]
 {
-"265
-[; ;main.c: 265:         DAC5_Load10bitInputData(i);
+"338
+[; ;main.c: 338:         DAC5_Load10bitInputData(i);
 [e ( _DAC5_Load10bitInputData (1 _i ]
-"266
-[; ;main.c: 266:       _delay((unsigned long)((2)*(8000000/4000.0)));
-[e ( __delay (1 -> * -> -> 2 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"268
-[; ;main.c: 268:         stage_val = average_adc_reading(STAGE2_MON);
-[e = _stage_val ( _average_adc_reading (1 . `E12086 2 ]
-"270
-[; ;main.c: 270:         diff_value = (int16_t) stage_val - (int16_t) gnd_ref_val;
-[e = _diff_value -> - -> -> _stage_val `s `i -> -> _gnd_ref_val `s `i `s ]
-"272
-[; ;main.c: 272:         if (abs(diff_value)< abs(best_val)){
-[e $ ! < ( _abs (1 -> _diff_value `i ( _abs (1 -> _best_val `i 1767  ]
+"339
+[; ;main.c: 339:         if(i%10==0){
+[e $ ! == % -> _i `ui -> -> 10 `i `ui -> -> 0 `i `ui 1783  ]
 {
-"273
-[; ;main.c: 273:             best_val = diff_value;
+"340
+[; ;main.c: 340:             gnd_ref_val = average_adc_reading_quick(GNDREF_SENSE);
+[e = _gnd_ref_val ( _average_adc_reading_quick (1 . `E12086 0 ]
+"341
+[; ;main.c: 341:         }
+}
+[e :U 1783 ]
+"343
+[; ;main.c: 343:         stage_val = average_adc_reading_quick(STAGE2_MON);
+[e = _stage_val ( _average_adc_reading_quick (1 . `E12086 2 ]
+"344
+[; ;main.c: 344:         diff_value = (int32_t) stage_val - (int32_t) gnd_ref_val;
+[e = _diff_value - -> _stage_val `l -> _gnd_ref_val `l ]
+"345
+[; ;main.c: 345:         if (labs(diff_value)<= labs(best_val)){
+[e $ ! <= ( _labs (1 _diff_value ( _labs (1 _best_val 1784  ]
+{
+"346
+[; ;main.c: 346:             best_val = diff_value;
 [e = _best_val _diff_value ]
-"274
-[; ;main.c: 274:             best_dac_val = i;
+"347
+[; ;main.c: 347:             best_dac_val = i;
 [e = _best_dac_val _i ]
-"275
-[; ;main.c: 275:         }
+"348
+[; ;main.c: 348:         }
 }
-[e :U 1767 ]
-"276
-[; ;main.c: 276:     }
+[e :U 1784 ]
+"351
+[; ;main.c: 351:         if((diff_value < (1<<8)*(-4)) && (i > start_dac+10)){
+[e $ ! && < _diff_value -> * << -> 1 `i -> 8 `i -U -> 4 `i `l > -> _i `ui + -> _start_dac `ui -> -> 10 `i `ui 1785  ]
+{
+"352
+[; ;main.c: 352:             break;
+[e $U 1780  ]
+"353
+[; ;main.c: 353:         }
 }
-[e = _i -> + -> _i `ui -> -> 2 `i `ui `us ]
-[e :U 1766 ]
-[e $ < -> _i `ui -> _end_dac `ui 1763  ]
-[e :U 1764 ]
+[e :U 1785 ]
+"354
+[; ;main.c: 354:     }
 }
-"278
-[; ;main.c: 278:     DAC5_Load10bitInputData(best_dac_val);
+[e ++ _i -> -> 1 `i `us ]
+[e :U 1782 ]
+[e $ < -> _i `ui -> _end_dac `ui 1779  ]
+[e :U 1780 ]
+}
+"357
+[; ;main.c: 357:     DAC5_Load10bitInputData(best_dac_val);
 [e ( _DAC5_Load10bitInputData (1 _best_dac_val ]
-"279
-[; ;main.c: 279:     LATBbits.LATB4 = old_gain;
-[e = . . _LATBbits 0 4 -> _old_gain `uc ]
-"280
-[; ;main.c: 280:     LATAbits.LATA7 = old_bw;
-[e = . . _LATAbits 0 7 -> _old_bw `uc ]
-"281
-[; ;main.c: 281: }
-[e :UE 1758 ]
+"358
+[; ;main.c: 358:     _delay((unsigned long)((50)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 50 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"360
+[; ;main.c: 360:     gnd_ref_val = average_adc_reading(GNDREF_SENSE);
+[e = _gnd_ref_val ( _average_adc_reading (1 . `E12086 0 ]
+"361
+[; ;main.c: 361:     best_val = 262144;
+[e = _best_val -> 262144 `l ]
+"362
+[; ;main.c: 362:     start_dac = best_dac_val - 15;
+[e = _start_dac -> - -> _best_dac_val `ui -> -> 15 `i `ui `us ]
+"363
+[; ;main.c: 363:     end_dac = best_dac_val + 15;
+[e = _end_dac -> + -> _best_dac_val `ui -> -> 15 `i `ui `us ]
+"364
+[; ;main.c: 364:     DAC5_Load10bitInputData(start_dac);
+[e ( _DAC5_Load10bitInputData (1 _start_dac ]
+"365
+[; ;main.c: 365:     _delay((unsigned long)((100)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"366
+[; ;main.c: 366:     for(uint16_t i = start_dac; i<end_dac; i++){
+{
+[v _i `us ~T0 @X0 1 a ]
+[e = _i _start_dac ]
+[e $U 1789  ]
+[e :U 1786 ]
+{
+"368
+[; ;main.c: 368:         DAC5_Load10bitInputData(i);
+[e ( _DAC5_Load10bitInputData (1 _i ]
+"369
+[; ;main.c: 369:         stage_val = average_adc_reading(STAGE2_MON);
+[e = _stage_val ( _average_adc_reading (1 . `E12086 2 ]
+"370
+[; ;main.c: 370:         _delay((unsigned long)((3)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 3 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"371
+[; ;main.c: 371:         diff_value = (int32_t) stage_val - (int32_t) gnd_ref_val;
+[e = _diff_value - -> _stage_val `l -> _gnd_ref_val `l ]
+"372
+[; ;main.c: 372:         if (labs(diff_value)<= labs(best_val)){
+[e $ ! <= ( _labs (1 _diff_value ( _labs (1 _best_val 1790  ]
+{
+"373
+[; ;main.c: 373:             best_val = diff_value;
+[e = _best_val _diff_value ]
+"374
+[; ;main.c: 374:             best_dac_val = i;
+[e = _best_dac_val _i ]
+"375
+[; ;main.c: 375:         }
 }
-"283
-[; ;main.c: 283: void init_sensor(void){
+[e :U 1790 ]
+"376
+[; ;main.c: 376:     }
+}
+[e ++ _i -> -> 1 `i `us ]
+[e :U 1789 ]
+[e $ < -> _i `ui -> _end_dac `ui 1786  ]
+[e :U 1787 ]
+}
+"379
+[; ;main.c: 379:     best_dac_val_l = best_dac_val;
+[e = _best_dac_val_l _best_dac_val ]
+"380
+[; ;main.c: 380:     best_val = 262144;
+[e = _best_val -> 262144 `l ]
+"382
+[; ;main.c: 382:     for(uint16_t i = end_dac; i> start_dac; i--){
+{
+[v _i `us ~T0 @X0 1 a ]
+[e = _i _end_dac ]
+[e $U 1794  ]
+[e :U 1791 ]
+{
+"384
+[; ;main.c: 384:         DAC5_Load10bitInputData(i);
+[e ( _DAC5_Load10bitInputData (1 _i ]
+"385
+[; ;main.c: 385:         stage_val = average_adc_reading(STAGE2_MON);
+[e = _stage_val ( _average_adc_reading (1 . `E12086 2 ]
+"386
+[; ;main.c: 386:         _delay((unsigned long)((3)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 3 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"387
+[; ;main.c: 387:         diff_value = (int32_t) stage_val - (int32_t) gnd_ref_val;
+[e = _diff_value - -> _stage_val `l -> _gnd_ref_val `l ]
+"388
+[; ;main.c: 388:         if (labs(diff_value)<= labs(best_val)){
+[e $ ! <= ( _labs (1 _diff_value ( _labs (1 _best_val 1795  ]
+{
+"389
+[; ;main.c: 389:             best_val = diff_value;
+[e = _best_val _diff_value ]
+"390
+[; ;main.c: 390:             best_dac_val = i;
+[e = _best_dac_val _i ]
+"391
+[; ;main.c: 391:         }
+}
+[e :U 1795 ]
+"392
+[; ;main.c: 392:     }
+}
+[e -- _i -> -> 1 `i `us ]
+[e :U 1794 ]
+[e $ > -> _i `ui -> _start_dac `ui 1791  ]
+[e :U 1792 ]
+}
+"395
+[; ;main.c: 395:     best_dac_val = (best_dac_val + best_dac_val_l)>>1;
+[e = _best_dac_val -> >> + -> _best_dac_val `ui -> _best_dac_val_l `ui -> 1 `i `us ]
+"396
+[; ;main.c: 396:     DAC5_Load10bitInputData(best_dac_val);
+[e ( _DAC5_Load10bitInputData (1 _best_dac_val ]
+"397
+[; ;main.c: 397:     LATAbits.LATA7 = old_bw;
+[e = . . _LATAbits 0 7 _old_bw ]
+"398
+[; ;main.c: 398:     LATBbits.LATB4 = old_gain;
+[e = . . _LATBbits 0 4 _old_gain ]
+"399
+[; ;main.c: 399: }
+[e :UE 1774 ]
+}
+"401
+[; ;main.c: 401: void init_sensor(void){
 [v _init_sensor `(v ~T0 @X0 1 ef ]
 {
 [e :U _init_sensor ]
 [f ]
-"285
-[; ;main.c: 285:     _delay((unsigned long)((10)*(8000000/4000.0)));
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"286
-[; ;main.c: 286:     zero_stage_1();
+"402
+[; ;main.c: 402:     uint32_t gnd_ref_val;
+[v _gnd_ref_val `ul ~T0 @X0 1 a ]
+"403
+[; ;main.c: 403:     uint32_t stage_val;
+[v _stage_val `ul ~T0 @X0 1 a ]
+"404
+[; ;main.c: 404:     int32_t diff_value;
+[v _diff_value `l ~T0 @X0 1 a ]
+"406
+[; ;main.c: 406:     _delay((unsigned long)((5)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"407
+[; ;main.c: 407:     zero_stage_1();
 [e ( _zero_stage_1 ..  ]
-"287
-[; ;main.c: 287:     _delay((unsigned long)((10)*(8000000/4000.0)));
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"288
-[; ;main.c: 288:     zero_stage_2();
+"409
+[; ;main.c: 409:     if(LATBbits.LATB4 == 0){
+[e $ ! == -> . . _LATBbits 0 4 `i -> 0 `i 1797  ]
+{
+"410
+[; ;main.c: 410:         _delay((unsigned long)((50)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 50 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"411
+[; ;main.c: 411:         zero_stage_2();
 [e ( _zero_stage_2 ..  ]
-"290
-[; ;main.c: 290: }
-[e :UE 1768 ]
+"412
+[; ;main.c: 412:     }
 }
-"292
-[; ;main.c: 292: void reset_sensor(){
+[e :U 1797 ]
+"414
+[; ;main.c: 414:     stage_val = average_adc_reading(STAGE2_MON);
+[e = _stage_val ( _average_adc_reading (1 . `E12086 2 ]
+"415
+[; ;main.c: 415:     gnd_ref_val = average_adc_reading(GNDREF_SENSE);
+[e = _gnd_ref_val ( _average_adc_reading (1 . `E12086 0 ]
+"416
+[; ;main.c: 416:     diff_value = (int32_t) gnd_ref_val - (int32_t) stage_val ;
+[e = _diff_value - -> _gnd_ref_val `l -> _stage_val `l ]
+"417
+[; ;main.c: 417:     if ( labs(diff_value) > ((1<<8)*20) ){
+[e $ ! > ( _labs (1 _diff_value -> * << -> 1 `i -> 8 `i -> 20 `i `l 1798  ]
+{
+"418
+[; ;main.c: 418:         set_led(0x4);
+[e ( _set_led (1 -> -> 4 `i `uc ]
+"419
+[; ;main.c: 419:         _delay((unsigned long)((3000)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 3000 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"420
+[; ;main.c: 420:         set_led(led_color_state);
+[e ( _set_led (1 _led_color_state ]
+"421
+[; ;main.c: 421:     }
+}
+[e :U 1798 ]
+"422
+[; ;main.c: 422: }
+[e :UE 1796 ]
+}
+"424
+[; ;main.c: 424: void reset_sensor(){
 [v _reset_sensor `(v ~T0 @X0 1 ef ]
 {
 [e :U _reset_sensor ]
 [f ]
-"293
-[; ;main.c: 293:     do { LATAbits.LATA6 = 0; } while(0);
-[e :U 1772 ]
+"425
+[; ;main.c: 425:     do { LATAbits.LATA6 = 0; } while(0);
+[e :U 1802 ]
 {
 [e = . . _LATAbits 0 6 -> -> 0 `i `uc ]
 }
-[e :U 1771 ]
-"294
-[; ;main.c: 294:      _delay((unsigned long)((50)*(8000000/4000.0)));
-[e ( __delay (1 -> * -> -> 50 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"295
-[; ;main.c: 295:     do { LATAbits.LATA6 = 1; } while(0);
-[e :U 1775 ]
+[e :U 1801 ]
+"426
+[; ;main.c: 426:      _delay((unsigned long)((40)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 40 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"427
+[; ;main.c: 427:     do { LATAbits.LATA6 = 1; } while(0);
+[e :U 1805 ]
 {
 [e = . . _LATAbits 0 6 -> -> 1 `i `uc ]
 }
-[e :U 1774 ]
-"296
-[; ;main.c: 296:      _delay((unsigned long)((50)*(8000000/4000.0)));
-[e ( __delay (1 -> * -> -> 50 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"297
-[; ;main.c: 297:     do { LATAbits.LATA6 = 0; } while(0);
-[e :U 1778 ]
+[e :U 1804 ]
+"428
+[; ;main.c: 428:      _delay((unsigned long)((40)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 40 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"429
+[; ;main.c: 429:     do { LATAbits.LATA6 = 0; } while(0);
+[e :U 1808 ]
 {
 [e = . . _LATAbits 0 6 -> -> 0 `i `uc ]
 }
-[e :U 1777 ]
-"299
-[; ;main.c: 299: }
-[e :UE 1769 ]
+[e :U 1807 ]
+"430
+[; ;main.c: 430:     _delay((unsigned long)((50)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 50 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"431
+[; ;main.c: 431: }
+[e :UE 1799 ]
 }
-"301
-[; ;main.c: 301: void low_battery_loop(){
+"433
+[; ;main.c: 433: void low_battery_loop(){
 [v _low_battery_loop `(v ~T0 @X0 1 ef ]
 {
 [e :U _low_battery_loop ]
 [f ]
-"302
-[; ;main.c: 302:     while(1){
-[e :U 1781 ]
+"434
+[; ;main.c: 434:     while(1){
+[e :U 1811 ]
 {
-"303
-[; ;main.c: 303:         set_led(0x0);
+"435
+[; ;main.c: 435:         set_led(0x0);
 [e ( _set_led (1 -> -> 0 `i `uc ]
-"305
-[; ;main.c: 305:         _delay((unsigned long)((500)*(8000000/4000.0)));
+"437
+[; ;main.c: 437:         _delay((unsigned long)((500)*(8000000/4000.0)));
 [e ( __delay (1 -> * -> -> 500 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"307
-[; ;main.c: 307:         set_led(0x4);
+"439
+[; ;main.c: 439:         set_led(0x4);
 [e ( _set_led (1 -> -> 4 `i `uc ]
-"309
-[; ;main.c: 309:         _delay((unsigned long)((500)*(8000000/4000.0)));
+"441
+[; ;main.c: 441:         _delay((unsigned long)((500)*(8000000/4000.0)));
 [e ( __delay (1 -> * -> -> 500 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"310
-[; ;main.c: 310:     }
+"442
+[; ;main.c: 442:     }
 }
-[e :U 1780 ]
-[e $U 1781  ]
-[e :U 1782 ]
-"311
-[; ;main.c: 311: }
-[e :UE 1779 ]
+[e :U 1810 ]
+[e $U 1811  ]
+[e :U 1812 ]
+"443
+[; ;main.c: 443: }
+[e :UE 1809 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"312
-[; ;main.c: 312: void main(void)
+"444
+[; ;main.c: 444: void main(void)
 [v _main `(v ~T0 @X0 1 ef ]
-"313
-[; ;main.c: 313: {
+"445
+[; ;main.c: 445: {
 {
 [e :U _main ]
 [f ]
-"315
-[; ;main.c: 315:     SYSTEM_Initialize();
+"447
+[; ;main.c: 447:     SYSTEM_Initialize();
 [e ( _SYSTEM_Initialize ..  ]
-"317
-[; ;main.c: 317:     DAC7_SetOutput(16);
+"449
+[; ;main.c: 449:     DAC7_SetOutput(16);
 [e ( _DAC7_SetOutput (1 -> -> 16 `i `uc ]
-"318
-[; ;main.c: 318:     DAC3_SetOutput(24);
-[e ( _DAC3_SetOutput (1 -> -> 24 `i `uc ]
-"319
-[; ;main.c: 319:     DAC4_SetOutput(8);
-[e ( _DAC4_SetOutput (1 -> -> 8 `i `uc ]
-"322
-[; ;main.c: 322:     DAC5_Load10bitInputData(512);
+"450
+[; ;main.c: 450:     DAC3_SetOutput(25);
+[e ( _DAC3_SetOutput (1 -> -> 25 `i `uc ]
+"451
+[; ;main.c: 451:     DAC4_SetOutput(7);
+[e ( _DAC4_SetOutput (1 -> -> 7 `i `uc ]
+"454
+[; ;main.c: 454:     DAC5_Load10bitInputData(512);
 [e ( _DAC5_Load10bitInputData (1 -> -> 512 `i `us ]
-"323
-[; ;main.c: 323:     DAC1_Load10bitInputData(512);
+"455
+[; ;main.c: 455:     DAC1_Load10bitInputData(512);
 [e ( _DAC1_Load10bitInputData (1 -> -> 512 `i `us ]
-"324
-[; ;main.c: 324:     _delay((unsigned long)((50)*(8000000/4000.0)));
+"456
+[; ;main.c: 456:     _delay((unsigned long)((50)*(8000000/4000.0)));
 [e ( __delay (1 -> * -> -> 50 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"327
-[; ;main.c: 327:     if((PORTCbits.RC7 == 0) && (PORTBbits.RB0 == 0)){
-[e $ ! && == -> . . _PORTCbits 0 7 `i -> 0 `i == -> . . _PORTBbits 0 0 `i -> 0 `i 1784  ]
+"459
+[; ;main.c: 459:     if((PORTCbits.RC7 == 0) && (PORTBbits.RB0 == 0)){
+[e $ ! && == -> . . _PORTCbits 0 7 `i -> 0 `i == -> . . _PORTBbits 0 0 `i -> 0 `i 1814  ]
 {
-"328
-[; ;main.c: 328:         set_led((0x1 | 0x4));
+"460
+[; ;main.c: 460:         set_led((0x1 | 0x4));
 [e ( _set_led (1 -> | -> 1 `i -> 4 `i `uc ]
-"329
-[; ;main.c: 329:         while(1){
-[e :U 1786 ]
+"461
+[; ;main.c: 461:         while(1){
+[e :U 1816 ]
 {
-"330
-[; ;main.c: 330:             do { LATAbits.LATA6 = 0; } while(0);
-[e :U 1790 ]
+"462
+[; ;main.c: 462:             do { LATAbits.LATA6 = 0; } while(0);
+[e :U 1820 ]
 {
 [e = . . _LATAbits 0 6 -> -> 0 `i `uc ]
 }
-[e :U 1789 ]
-"331
-[; ;main.c: 331:             _delay((unsigned long)((9)*(8000000/4000.0)));
+[e :U 1819 ]
+"463
+[; ;main.c: 463:             _delay((unsigned long)((9)*(8000000/4000.0)));
 [e ( __delay (1 -> * -> -> 9 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"332
-[; ;main.c: 332:             do { LATAbits.LATA6 = 1; } while(0);
-[e :U 1793 ]
+"464
+[; ;main.c: 464:             do { LATAbits.LATA6 = 1; } while(0);
+[e :U 1823 ]
 {
 [e = . . _LATAbits 0 6 -> -> 1 `i `uc ]
 }
-[e :U 1792 ]
-"333
-[; ;main.c: 333:             _delay((unsigned long)((9)*(8000000/4000.0)));
+[e :U 1822 ]
+"465
+[; ;main.c: 465:             _delay((unsigned long)((9)*(8000000/4000.0)));
 [e ( __delay (1 -> * -> -> 9 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"334
-[; ;main.c: 334:         }
+"466
+[; ;main.c: 466:         }
 }
-[e :U 1785 ]
-[e $U 1786  ]
-[e :U 1787 ]
-"336
-[; ;main.c: 336:     }
+[e :U 1815 ]
+[e $U 1816  ]
+[e :U 1817 ]
+"467
+[; ;main.c: 467:     }
 }
-[e :U 1784 ]
-"338
-[; ;main.c: 338:     led_color_state = 0x2;
+[e :U 1814 ]
+"469
+[; ;main.c: 469:     led_color_state = 0x2;
 [e = _led_color_state -> -> 2 `i `uc ]
-"339
-[; ;main.c: 339:     mux_state = 0;
+"470
+[; ;main.c: 470:     mux_state = 0;
 [e = _mux_state -> -> 0 `i `uc ]
-"340
-[; ;main.c: 340:     SW2_ISR();
+"471
+[; ;main.c: 471:     SW2_ISR();
 [e ( _SW2_ISR ..  ]
-"341
-[; ;main.c: 341:     _delay((unsigned long)((800)*(8000000/4000.0)));
-[e ( __delay (1 -> * -> -> 800 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"342
-[; ;main.c: 342:     reset_sensor();
+"472
+[; ;main.c: 472:     reset_sensor();
 [e ( _reset_sensor ..  ]
-"343
-[; ;main.c: 343:     init_sensor();
-[e ( _init_sensor ..  ]
-"346
-[; ;main.c: 346:     PIR2bits.C2IF = 0;
+"473
+[; ;main.c: 473:     _delay((unsigned long)((100)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"474
+[; ;main.c: 474:     zero_stage_1();
+[e ( _zero_stage_1 ..  ]
+"475
+[; ;main.c: 475:     _delay((unsigned long)((50)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 50 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"476
+[; ;main.c: 476:     zero_stage_2();
+[e ( _zero_stage_2 ..  ]
+"478
+[; ;main.c: 478:     PIR2bits.C2IF = 0;
 [e = . . _PIR2bits 0 6 -> -> 0 `i `uc ]
-"347
-[; ;main.c: 347:     PIR2bits.C1IF = 0;
+"479
+[; ;main.c: 479:     PIR2bits.C1IF = 0;
 [e = . . _PIR2bits 0 5 -> -> 0 `i `uc ]
-"349
-[; ;main.c: 349:     IOCBF0_SetInterruptHandler(SW2_ISR);
+"481
+[; ;main.c: 481:     IOCBF0_SetInterruptHandler(SW2_ISR);
 [e ( _IOCBF0_SetInterruptHandler (1 &U _SW2_ISR ]
-"351
-[; ;main.c: 351:     IOCCF7_SetInterruptHandler(SW1_ISR);
+"483
+[; ;main.c: 483:     IOCCF7_SetInterruptHandler(SW1_ISR);
 [e ( _IOCCF7_SetInterruptHandler (1 &U _SW1_ISR ]
-"352
-[; ;main.c: 352:     set_led(0x0);
+"484
+[; ;main.c: 484:     set_led(0x0);
 [e ( _set_led (1 -> -> 0 `i `uc ]
-"353
-[; ;main.c: 353:     _delay((unsigned long)((200)*(8000000/4000.0)));
+"485
+[; ;main.c: 485:     _delay((unsigned long)((200)*(8000000/4000.0)));
 [e ( __delay (1 -> * -> -> 200 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"354
-[; ;main.c: 354:     set_led(led_color_state);
+"486
+[; ;main.c: 486:     set_led(led_color_state);
 [e ( _set_led (1 _led_color_state ]
-"355
-[; ;main.c: 355:     (INTCONbits.GIE = 1);
+"487
+[; ;main.c: 487:     (INTCONbits.GIE = 1);
 [e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
-"356
-[; ;main.c: 356:     (INTCONbits.PEIE = 1);
+"488
+[; ;main.c: 488:     (INTCONbits.PEIE = 1);
 [e = . . _INTCONbits 0 6 -> -> 1 `i `uc ]
-"358
-[; ;main.c: 358:     while (1)
-[e :U 1795 ]
-"359
-[; ;main.c: 359:     {
+"490
+[; ;main.c: 490:     while (1)
+[e :U 1825 ]
+"491
+[; ;main.c: 491:     {
 {
-"360
-[; ;main.c: 360:         _delay((unsigned long)((500)*(8000000/4000.0)));
+"492
+[; ;main.c: 492:         _delay((unsigned long)((500)*(8000000/4000.0)));
 [e ( __delay (1 -> * -> -> 500 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"361
-[; ;main.c: 361:         if((average_adc_reading(channel_FVRBuffer1)>>3) > 460){
-[e $ ! > >> -> ( _average_adc_reading (1 . `E12086 14 `ui -> 3 `i -> -> 460 `i `ui 1797  ]
+"493
+[; ;main.c: 493:         if((average_adc_reading(channel_FVRBuffer1)>>8) > 460){
+[e $ ! > >> ( _average_adc_reading (1 . `E12086 14 -> 8 `i -> -> -> 460 `i `l `ul 1827  ]
 {
-"362
-[; ;main.c: 362:             (INTCONbits.GIE = 0);
+"494
+[; ;main.c: 494:             (INTCONbits.GIE = 0);
 [e = . . _INTCONbits 0 7 -> -> 0 `i `uc ]
-"363
-[; ;main.c: 363:             (INTCONbits.PEIE = 0);
+"495
+[; ;main.c: 495:             (INTCONbits.PEIE = 0);
 [e = . . _INTCONbits 0 6 -> -> 0 `i `uc ]
-"364
-[; ;main.c: 364:             low_battery_loop();
+"496
+[; ;main.c: 496:             low_battery_loop();
 [e ( _low_battery_loop ..  ]
-"365
-[; ;main.c: 365:         }
+"497
+[; ;main.c: 497:         }
 }
-[e :U 1797 ]
-"366
-[; ;main.c: 366:     }
+[e :U 1827 ]
+"498
+[; ;main.c: 498:     }
 }
-[e :U 1794 ]
-[e $U 1795  ]
-[e :U 1796 ]
-"367
-[; ;main.c: 367: }
-[e :UE 1783 ]
+[e :U 1824 ]
+[e $U 1825  ]
+[e :U 1826 ]
+"499
+[; ;main.c: 499: }
+[e :UE 1813 ]
 }

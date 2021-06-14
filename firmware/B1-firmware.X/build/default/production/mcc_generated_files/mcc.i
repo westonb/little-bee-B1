@@ -19669,16 +19669,16 @@ void SYSTEM_Initialize(void)
     PIN_MANAGER_Initialize();
     OSCILLATOR_Initialize();
     WDT_Initialize();
-    CMP2_Initialize();
     FVR_Initialize();
+    CMP2_Initialize();
     DAC3_Initialize();
     DAC5_Initialize();
     OPA2_Initialize();
     CMP1_Initialize();
     DAC4_Initialize();
-    CMP5_Initialize();
-    ADC_Initialize();
     DAC7_Initialize();
+    ADC_Initialize();
+    CMP5_Initialize();
     OPA1_Initialize();
     DAC1_Initialize();
 }
