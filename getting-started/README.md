@@ -1,117 +1,152 @@
-# Little Bee B1 - A high performance current & magnetic field probe
-The Little Bee B1 is an open source magnetic field and current probe based on an Anisotropic Magneto-Resistive (AMR) magnetic sensor. 
-It directly senses magnetic fields and measures current with a current sensing attachment consisting of a gapped ferrite toroid that is placed around a wire, establishing a fixed relation between the current in the wire and magnetic field the sensor is subject to. 
+# Little Bee B1 Operating Instructions
 
-The probe is capable of sensing DC currents and has a high frequency -3dB bandwidth in excess of 10Mhz. Typical specifications for current sensing are a +/- 5A range, and a 3mA RMS noise floor. For magnetic field sensing the probe has a +/- 6 gauss range. It is compatible with any 1M ohm input oscilloscope and is powered by a single AA battery. The probe uses a PIC microcontroller to automatically zero the sensor and to provide adjustable gain and bandwidth. 
+## Introduction
+The Little Bee is a current and magnetic field probe using an Anisotropic Magneto-Resistive (AMR) magnetic sensor.
+Current in a wire can accurately be sensed in a wire with the current sensing attachment.
+Without the attachment the Little Bee can be used to directly measure magnetic fields. In the context of circuit debugging this can be used to measure the current waveforms in PCB traces and inductors.  
+The Little Bee is powered by a AA battery, with an expected battery life of 4 hours, and connects to any oscilloscope with a 1M Ohm input with a SMA to BNC cable.
+The Little Bee has auto zeroing functionality and 4 different gain and bandwidth modes.
 
-All project source files are in this repository and the project currently has a CrowdSupply [campaign](https://www.crowdsupply.com/weston-braun/little-bee)
-<img src="doc/images/little_bee_v4_attachment.jpg" width="400"/> <img src="doc/images/little_bee_v4_circuit.jpg" width="400"/>
+## Typical Electrical Performance
+All Little Bee units are serialized and the frequency response is characterized in production for the low gain and 10MHz bandwidth mode.
+Production data is in the [test-data](../production/test-data) folder in this repo.
+Below is a plot of all of the production data.
+The outliers are from early production where gain was adjusted after characterization and there was a 20MHz bandwidth limit enabled on the test oscilloscope.
+<img src="../doc/images/production_bandwidth.png" width="400"/>
 
-### Typical Electrical Performance 
+#### Current sensing
 
-#### Current sensing 
-
-- **Bandwidth**: DC - 10 MHz 
-- **Sensitivity**: 0.25 Volts/Amp
-- **Max Current**: +/- 5 A
+- **Bandwidth**: DC - 10 MHz
+- **Sensitivity**: 0.25 Volts/Amp at low gain, 1.00 Volts/Amp at high gain
+- **Max Current**: +/- 5 A at low gain, +/- 1.5 A at high gain
 - **Noise**
     - 3 mA RMS at 10 MHz bandwidth
-    - 2 mA RMS at 1 MHz bandwidth 
+    - 2 mA RMS at 1 MHz bandwidth
 - **DC Accuracy**: +/- 15%
 - **Insertion Impedance**: 100 nH in parallel with 70 Ohms
 
-#### Magnetic Field Sensing 
+#### Magnetic Field Sensing
 
 - **Bandwidth**: DC - 10 MHz
-- **Sensitivity**: 0.2 Volts/Gauss 
-- **Max Field**: +/- 6 Gauss
+- **Sensitivity**: 0.2 Volts/Gauss at low gain, 0.8 Volts/Gauss at high gain
+- **Max Field**: +/- 6 Gauss at low gain, +/- 1.8 Gauss at high gain
 - **Noise**
     - 4mG RMS at 10 MHz bandwidth
     - 2.5mG RMS at 1 MHz bandwidth
 
 ## Operation
-Connect the Little Bee to any oscilloscope with a SMA-BNC cable. When the probe is powered on it automatically zeros and starts in the high bandwidth and low gain mode. Tapping the "Mode Select" button will cycle through the bandwidth and gain options, which are indicated by the LED color. 
+### Start Up
+When the Little Bee is powered on it will initialize in the low gain and high bandwidth mode and immediately enter the auto-zero routine.
+The auto-zero routine takes 3.5 seconds and the LED will blink once when auto-zeroing is finished.
+During this period the Little Bee will not respond to repeated button presses.
+Once the auto-zero routine is done the Little Bee is ready to use.
+The two buttons "Reset/Zero" and "Mode Select" are used to control the functionality of the Little Bee and the color of the status LED is used to indicate the probe status and operating mode.
+By holding both buttons down before power is switched on the Little Bee will start up in an absolute field sensing mode until power is cycled.
 
-The probe should be re-zeroed after switching modes. This is accomplished by pressing and holding the "zero/reset" button for at least one second before releasing. The LED will blink once when the button is first pressed and a second time when the zeroing operation is done. 
+### Reset and Zero
+The "Reset/Zero" button can be used to reset the sensor after exposure to a high magnetic field or to zero the probe in order to remove impacts from ambient magnetic fields for improved accuracy when measuring low currents or magnetic fields.
+Tapping the "Reset/Zero" button will reset the sensor.
+When the sensor is reset the status LED will flash off and on twice in quick succession.
+If the status LED was previously red due to the requirement for a sensor reset, the status LED will return to the normal color after reset.
+Resetting the Little Bee sensor has no impact on the zeroing.  
 
-When the sensor is exposed to an excessive magnetic field, or excessive current when the current sensing attachment is used, the sensor will be demagnetized and need to be reset for normal operation. For on axis fields the probe can detect this and will turn the indicator light red.
-Off axis fields, which can occur when the probe is used for magnetic field sensing, can exceed the sensor limit without being detected. This will result a loss of sensitivity and noticeable distortion in the sensed waveforms.  
-The sensor can be reset and normal operation restored without impacting the zeroing of the probe by tapping the "zero/reset" button, which will briefly flash the indicator light.
+If the "Reset/Zero" button is held for more than 1 second the probe will enter the auto-zero routine, which takes 2 to 4 seconds.
+The LED will flash off and on once at the start of the auto-zero routine and once after the auto-zero routine is finished.
 
-If the probe senses a low battery that will inhibit normal operation the indicator light will flash red. An alkaline AA battery should provide around 4 hours of battery life. 
+Rarely, the auto-zero routine is unable to zero the output due to high ambient magnetic fields.
+When this happens the status LED will blink red at the end of the auto-zeroing routine.
+
+### Mode Select
+Pressing the "Mode Select" button cycles the Little Bee through the 4 gain and bandwidth modes.
+The current mode is indicated by the color of the status LED.
+The status LED will cycle in the order of  \[Green, Yellow, Blue, Teal\]  with each press of the "Mode Select" button.
+
+### Status LED
+The status LED is used to indicate the gain and bandwidth setting of the Little Bee as well as to indicate error conditions.
+The below table details the meaning of each status LED color.
+
+| Status LED Color | Mode                    |
+|-----------|-------------------------|
+| Green     | 10MHz bandwidth 0.25V/A or 0.2 V/Gauss |
+| Yellow    | 1MHz bandwidth 0.25V/A or 0.2 V/Gauss |
+| Blue      | 10MHz bandwidth 1V/A or 0.8 V/Gauss   |
+| Teal      | 1MHz Bandwidth 1V/A or 0.8 V/Gauss    |
+| Red       | Sensor Reset Required |
+| Flashing Red | Low Battery |
+| Purple | Absolute Field Sensing Mode |
 
 ### Current Sensing
-Current sensing is achieved with the current sensing attachment, which clips on to the tip of the probe. The current sensing attachment uses a ferrite core to translate the current flowing in to a wire into a known magnetic field strength. 
-A wire can be threaded through the current sensing attachment or the current sensing attachment can be slipped over a wire before being clipped on. With the logo and writing on the Little Bee facing the user, a wire carrying current away from the user will be read as a positive current. 
 
-The location of the wire within the current sensing attachment has some impact on the sensitivity of the probe due to the magnetic field in generates. It is recommended to keep the wire on the opposite side of the sensing tip within the aperture of the current sensing attachment.
+<img src="../doc/images/flux_concentrator_demo.jpg" width="400"/>
 
-For higher resolution when measuring low currents, multiple turns of the wire can be made through the aperture of the current sensing attachment. The final sensitivity will be the set sensitivity times the number of turns. 
 
-Tapping the "Mode Select" button will cycle through the bandwidth and gain options, which are indicated by the LED color:
+The Little Bee is used for current sensing mode by clipping the included current sensing attachment on to the detents on the probe tip and passing a wire though the hole in the current sensing attachment.
+To reduce mechanical strain it is recommended to hold the Little Bee by the plastic tip cover when clipping on the current sensing attachment.
 
-| LED Color | Mode                    |
-|-----------|-------------------------|
-| Green     | 10MHz bandwidth 0.25V/A |
-| Yellow    | 1MHz bandwidth 0.25V/A  |
-| Blue      | 10MHz bandwidth 1V/A    |
-| Teal      | 1MHz Bandwidth 1V/A     |
 
-The gain of the probe can be adjusted with the labeled trimmer resistor on the PCB. Units are shipped calibrated to the above gains.
+The electrical operation of the Little Bee is the same between current sensing and field sensing, the current sensing attachment merely establishes a fixed relationship between the current flowing in the wire and the magnetic field the sensor is exposed to.
+The direction of current flow in a wire for a positive output voltage is indicated on the top of the Little Bee.
+
+
+The location of the wire within the current sensing attachment may cause minor changes in the gain of the probe.
+For maximal accuracy it is recommended to prevent the wire from being directly adjacent to the probe tip and instead keep it centered in the middle or at the far end of the current sensing attachment.
+When measuring small currents, multiple turns of wire may be made through the center of the current sensing attachment to increase the response.
+The current measured by the Little Bee will be the current flowing through the wire multiplied by the number of turns.
+
+The current sensing attachment may have a residual magnetic field and only reduces, but does not eliminate, the influences of external magnetic fields.
+To maximize accuracy it is recommended to zero the Little Bee after clipping the current sensing attachment on and placing the Little Bee as part of the test setup.
+
+
+The magnetic domains in the AMR sensor used in the Little Bee can be mis-aligned by large magnetic fields, leading to incorrect output until the sensor is reset.
+With the current sensing attachment, the majority of the magnetic field will be on the sensitive axis of the sensor, which allows the Little Bee to detect this overload condition.
+At currents above 6 amps the status LED will turn red, indicating the need for a sensor reset.
 
 ### Magnetic Field Sensing
-The magnetic sensor is located approximately 1.0mm offset from the tip of the probe. The Little Bee will measure a magnetic field entering perpendicular to the top of the probe as a positive voltage. To measure the magnetic field emitted by a PCB trace the probe should be placed perpendicular to the PCB with the long direction of the tip parallel to the trace. 
 
-The earth's magnetic field is typically between 0.3 - 0.6 Gauss, depending on geographic location. This is well within the sensing range of the probe. Additionally, large ferrous objects and transformers can emit stray magnetic fields. It is recommended the Little Bee is zeroed while holding it in the orientation used for taking measurements to reduce the error introduced by stray magnetic fields. 
+<img src="../doc/images/field_mode_demo.jpg" width="400"/>
+
+Without the current sensing attachment the Little Bee can be used to directly sense magnetic fields.
+Useful applications for this include tracing currents in PCB traces and measuring inductor current waveforms through leakage magnetic fields.
+The magnetic field direction for a positive output voltage is marked on the top of the Little Bee and shown below for convenience.
+
+<img src="../doc/images/probe_sense_direction.jpeg" width="400"/>
+
+This direction means that for checking the current in a PCB trace the body of the Little Bee should be held perpendicular to the PCB with the longer side of the probe tip parallel to the PCB trace.
+If trying to measure the current in a PCB trace it is recommended to first calibrate your measurements with a known current flowing through a PCB trace, but for typical PCB geometries the Little Bee response will be around 0.2V/A when the probe is in low gain mode.
+
+Due to the small magnetic fields generated by PCB traces carrying even modest currents, measurements are susceptible to ambient magnetic fields, with the magnetic field strength of the earth being a large contributor.
+It is recommended that measurements be taken away from any large iron transformers, motors, or fans, and the Little Bee first be zeroed while being held a few inches above the PCB in the orientation that will be used for probing.
 
 
-The gain of the probe is calibrated based on measurements with the current sensing attachment, so the true sensitivity will depend on the tolerance current sensing attachment. The nominal sensitivities are:
+Another difficulty in taking magnetic field measurements is saturating the sensor with excessive magnetic fields.
+The sensor can be overloaded, corrupting the output until it is reset, by magnetic fields that are not on the sensitive axis.
+This means that, unlike with current sensing, the Little Bee can not always detect when the sensor has been overloaded and requires a reset.
+For applications where the magnetic field may be large and it is not necessarily clear what the magnetic field direction is, such as sensing the leakage magnetic fields of inductors and transformers, it is recommended to keep the Little Bee as far back as possible while still getting good readings and to reset the sensor often.
 
-| LED Color | Mode                           |
-|-----------|--------------------------------|
-| Green     | 10MHz bandwidth 0.2 V/Gauss  |
-| Yellow    | 1MHz bandwidth 0.2 V/Gauss   |
-| Blue      | 10MHz bandwidth 0.8 V/Gauss  |
-| Teal      | 1MHz Bandwidth 0.8 V/Gauss   |
+### Absolute Field Sensing Mode  
+The absolute field sensing mode is mostly a novelty and debug tool that was added in late development.
+If both buttons are held down when the Little Bee is turned on the system will enter absolute field sensing mode until power is cycled and the status LED will turn purple.
+In this mode all further button inputs are ignored until power is cycled.
 
 
+In this mode the sensor sensing polarity is flipped at 55Hz by re-aligning the magnetic domains using the reset circuitry.
+This effectively performs signal mixing with the sensor input and a 55Hz signal.
+This shifts the sensor DC magnetic field reading to 55Hz while all system offsets stay at DC, allowing the value of the absolute magnetic field strength to be measured as a peak to peak AC value.
+This can be used for checking ambient magnetic field strengths, which would otherwise be zeroed out by the probe.
+Additionally, with added digital signal processing, this mode can allow for the Little Bee to measure very small magnetic fields.
 
-## Hardware 
-The kicad PCB files are in the [PCB](pcb/) directory and the [schematic](doc/current-sense.pdf) is in the doc directory.
 
-## Firmware 
-The Little Bee uses a PIC16 microcontroller to automatically zero the probe and control gain and bandwidth switching. The firmware is built with the 
-MPLAB X IDE and the complete project is in the [firmware](firmware) directory 
+## Safety
+The Little Bee B1 is not CAT rated.
+Do not use the Little Bee on un-insulated wires.
+The Little Bee is designed for use in a laboratory environment. 
 
-## Open Source 
-This work is licensed under a
-[Creative Commons Attribution-ShareAlike 4.0 International License][cc-by-sa].
+## Improvements
+### External Power
+Based on user feedback to power the Little Bee with something other than a AA battery, there is an unpopulated footprint for a 2 pin JST-XH connector (part number B2B-XH-A(LF)(SN)).
+Through this footprint up to 4.5 volts can be supplied, such as an lithium-ion battery.
+If an external power adapter is used it must be low noise and isolated; the SMA ground terminal on the Little Bee is not directly referenced to the negative pin on this terminal.
 
-[![CC BY-SA 4.0][cc-by-sa-image]][cc-by-sa]
 
-[cc-by-sa]: http://creativecommons.org/licenses/by-sa/4.0/
-[cc-by-sa-image]: https://licensebuttons.net/l/by-sa/4.0/88x31.png
-[cc-by-sa-shield]: https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg
-
-## Demos 
-### Sensing the AC line current into a switch-mode power supply
-<img src="doc/images/flux_concentrator_demo.jpg" width="600"/>
-
-### Sensing the magnetic field from an inductor
-<img src="doc/images/field_mode_demo.jpg" width="600"/>
-
-### Example Waveforms
-Yellow Waveform: Little Bee B1 
-
-Green Waveform: Tektronix CT-2 Current Transformer
-#### Ramp
-<img src="doc/images/waveform-ramp.PNG" width="600"/>
-
-#### SinC 
-<img src="doc/images/waveform-sinc.PNG" width="600"/>
-
-#### Square Wave (Low Current)
-<img src="doc/images/waveform-square-wave.PNG" width="600"/>
-
-#### Noise Floor
-<img src="doc/images/waveform-noise-floor.PNG" width="600"/>
+### Mechanical Case
+STL files for a user printable mechanical case for the Little Bee are under development.  
